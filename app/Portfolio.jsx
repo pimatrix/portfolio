@@ -70,35 +70,93 @@ export default function Portfolio() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [formState, setFormState] = useState({ sending: false, msg: "", ok: false });
   const dotRef = useRef(null);
-  const ringRef = useRef(null);
+  const trailRef = useRef(null);
 
-  /* Custom cursor: dot follows instantly, ring trails with easing */
+  /* Particle-trail cursor: glowing traces follow the movement and fade out */
   useEffect(() => {
     if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
     const dot = dotRef.current;
-    const ring = ringRef.current;
-    let mx = -100, my = -100, rx = -100, ry = -100, raf;
-    const move = (e) => { mx = e.clientX; my = e.clientY; };
-    const loop = () => {
-      rx += (mx - rx) * 0.16;
-      ry += (my - ry) * 0.16;
-      if (dot) dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
-      if (ring) ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
+    const canvas = trailRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    const DPR = Math.min(window.devicePixelRatio || 1, 2);
+    const resize = () => {
+      canvas.width = window.innerWidth * DPR;
+      canvas.height = window.innerHeight * DPR;
+      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    };
+    resize();
+    window.addEventListener("resize", resize);
+
+    const COLORS = ["#ff4b1f", "#ff4b1f", "#ff4b1f", "#16130e", "#ffb59f"];
+    const pts = [];
+    let lastX = null, lastY = null, raf, lastT = performance.now();
+
+    const spawn = (x, y) => {
+      pts.push({
+        x: x + (Math.random() - 0.5) * 6,
+        y: y + (Math.random() - 0.5) * 6,
+        vx: (Math.random() - 0.5) * 0.35,
+        vy: (Math.random() - 0.5) * 0.35 - 0.12,
+        life: 1,
+        size: 2 + Math.random() * 3.6,
+        color: COLORS[(Math.random() * COLORS.length) | 0],
+      });
+      if (pts.length > 110) pts.splice(0, pts.length - 110);
+    };
+
+    const move = (e) => {
+      const x = e.clientX, y = e.clientY;
+      if (dot) dot.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+      if (lastX === null) { lastX = x; lastY = y; spawn(x, y); return; }
+      const dist = Math.hypot(x - lastX, y - lastY);
+      const steps = Math.min(10, Math.max(1, Math.floor(dist / 7)));
+      for (let i = 1; i <= steps; i++) spawn(lastX + ((x - lastX) * i) / steps, lastY + ((y - lastY) * i) / steps);
+      lastX = x; lastY = y;
+    };
+
+    const loop = (t) => {
+      const dt = Math.min(50, t - lastT); lastT = t;
+      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      for (let i = pts.length - 1; i >= 0; i--) {
+        const p = pts[i];
+        p.life -= dt / 620;
+        if (p.life <= 0) { pts.splice(i, 1); continue; }
+        p.x += p.vx; p.y += p.vy;
+        ctx.save();
+        ctx.globalAlpha = p.life;
+        ctx.shadowBlur = 14 * p.life;
+        ctx.shadowColor = p.color;
+        ctx.fillStyle = p.color;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, Math.max(0.1, p.size * p.life), 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
       raf = requestAnimationFrame(loop);
     };
-    const over = (e) => {
-      const view = e.target.closest("[data-cursor='view']");
-      const link = e.target.closest("a, button, .chip, input, textarea, .proj-row");
-      ring?.classList.toggle("grow", !!view);
-      ring?.classList.toggle("mini", !view && !!link);
-      if (ring) ring.querySelector("span").textContent = view ? "View" : "";
-    };
-    window.addEventListener("mousemove", move);
-    window.addEventListener("mouseover", over);
     raf = requestAnimationFrame(loop);
+
+    const over = (e) => {
+      const hit = e.target.closest("a, button, .chip, input, textarea, .proj-row");
+      dot?.classList.toggle("is-active", !!hit);
+    };
+    const down = () => dot?.classList.add("is-down");
+    const up = () => dot?.classList.remove("is-down");
+    const leave = () => { lastX = null; lastY = null; };
+
+    window.addEventListener("mousemove", move, { passive: true });
+    window.addEventListener("mouseover", over);
+    window.addEventListener("mousedown", down);
+    window.addEventListener("mouseup", up);
+    document.documentElement.addEventListener("mouseleave", leave);
     return () => {
+      window.removeEventListener("resize", resize);
       window.removeEventListener("mousemove", move);
       window.removeEventListener("mouseover", over);
+      window.removeEventListener("mousedown", down);
+      window.removeEventListener("mouseup", up);
+      document.documentElement.removeEventListener("mouseleave", leave);
       cancelAnimationFrame(raf);
     };
   }, []);
@@ -190,7 +248,7 @@ export default function Portfolio() {
   return (
     <>
       <div className="cursor-dot" ref={dotRef}></div>
-      <div className="cursor-ring" ref={ringRef}><span></span></div>
+      <canvas className="trail-canvas" ref={trailRef} aria-hidden="true"></canvas>
       <div className="progress" id="progressBar"></div>
 
       <header className="topbar">

@@ -20,19 +20,16 @@ body {
 section[id] { scroll-margin-top: 90px; }
 img { user-select: none; }
 
-/* ---------- Custom cursor (fine pointers only) ---------- */
-.cursor-dot, .cursor-ring { display: none; }
+/* ---------- Custom cursor: dot + glowing particle trail (fine pointers only) ---------- */
+.cursor-dot, .trail-canvas { display: none; }
 @media (hover: hover) and (pointer: fine) {
   body, a, button, .proj-row, input, textarea { cursor: none; }
   .cursor-dot { display: block; position: fixed; top: 0; left: 0; width: 8px; height: 8px; border-radius: 50%;
-    background: var(--accent); z-index: 9999; pointer-events: none; transform: translate(-50%, -50%); }
-  .cursor-ring { display: flex; align-items: center; justify-content: center; position: fixed; top: 0; left: 0;
-    width: 38px; height: 38px; border-radius: 50%; border: 2px solid var(--ink); z-index: 9998; pointer-events: none;
-    transform: translate(-50%, -50%); transition: width 0.25s, height 0.25s, background-color 0.25s, border-color 0.25s; }
-  .cursor-ring span { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; color: #fff; opacity: 0; transition: opacity 0.2s; text-transform: uppercase; }
-  .cursor-ring.grow { width: 74px; height: 74px; background: var(--ink); border-color: var(--ink); }
-  .cursor-ring.grow span { opacity: 1; }
-  .cursor-ring.mini { width: 56px; height: 56px; background: rgba(22,19,14,0.08); }
+    background: var(--accent); z-index: 9999; pointer-events: none; transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(255,75,31,0.65); transition: width 0.22s, height 0.22s, background-color 0.22s; }
+  .cursor-dot.is-active { width: 20px; height: 20px; background: rgba(255,75,31,0.85); }
+  .cursor-dot.is-down { width: 6px; height: 6px; }
+  .trail-canvas { display: block; position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: 9998; pointer-events: none; }
 }
 
 /* ---------- Scroll progress ---------- */
