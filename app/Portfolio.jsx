@@ -51,7 +51,7 @@ const HACKS = [
   {
     tag: "Online",
     title: "Cybercrime Hackathon, Bihar",
-    desc: "Participated online and received the same problem statement as Void Hack(s) — put in another 36 hours of focused work on it.",
+    desc: "Participated online — the problem statement here was the same one as Void Hack(s) 8.0.",
   },
   {
     tag: "Internal Round Qualified",
