@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yash Sharma | Full-Stack Developer</title>
+    <meta name="description" content="Portfolio of Yash Sharma — Full-Stack Developer and BTech student at Medicaps University, building scalable ERP systems, secure web applications and AI-powered tools like Pragya AI.">
+    <meta name="theme-color" content="#020617">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yashx.xyz/">
+    <meta property="og:title" content="Yash Sharma | Full-Stack Developer">
+    <meta property="og:description" content="Full-Stack Developer building scalable ERP systems, secure applications and AI-powered tools. Creator of Pragya AI.">
+    <meta property="og:image" content="https://yashx.xyz/photo.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Yash Sharma | Full-Stack Developer">
+    <meta name="twitter:description" content="Full-Stack Developer building scalable ERP systems, secure applications and AI-powered tools. Creator of Pragya AI.">
+    <meta name="twitter:image" content="https://yashx.xyz/photo.jpg">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "Person", "name": "Yash Sharma", "url": "https://yashx.xyz/", "jobTitle": "Full-Stack Developer", "image": "https://yashx.xyz/photo.jpg", "alumniOf": "Medicaps University", "sameAs": ["https://github.com/yash-sharmax", "https://www.linkedin.com/in/yashsharmax", "https://instagram.com/yashandmatrix"]}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- PREMIUM VARIABLES --- */
+        :root {
+            --bg-dark: #020617;
+            --card-bg: rgba(30, 41, 59, 0.78);
+            --primary: #3b82f6;
+            --accent: #8b5cf6;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Particles */
+        #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; background-color: var(--bg-dark); }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
+
+        /* --- NAVIGATION --- */
+        header { position: fixed; top: 20px; left: 0; width: 100%; z-index: 1000; display: flex; justify-content: center; opacity: 0; animation: slideDown 1s forwards 0.5s; }
+        @keyframes slideDown { to { opacity: 1; top: 20px; } from { opacity: 0; top: -50px; } }
+        nav { background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(16px); border: 1px solid var(--border); padding: 12px 30px; border-radius: 50px; display: flex; align-items: center; justify-content: space-between; gap: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); width: auto; max-width: 90%; }
+        .logo { font-weight: 700; font-size: 1.1rem; color: var(--text-main); text-decoration: none; white-space: nowrap; }
+        .logo span { color: var(--primary); }
+        .nav-links { display: flex; gap: 25px; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+        .contact-btn { background: var(--primary); color: white !important; padding: 8px 20px; border-radius: 30px; font-weight: 600 !important; font-size: 0.9rem; text-decoration: none; transition: 0.3s; }
+        .contact-btn:hover { background: var(--accent); }
+
+        /* Mobile Menu */
+        .menu-toggle { display: none; color: white; font-size: 1.5rem; cursor: pointer; }
+        .mobile-menu { display: none; position: absolute; top: 70px; left: 50%; transform: translateX(-50%); width: 90%; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(20px); border: 1px solid var(--border); border-radius: 20px; padding: 20px; flex-direction: column; gap: 15px; text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        .mobile-menu a { color: var(--text-main); text-decoration: none; font-weight: 500; display: block; padding: 10px; border-radius: 10px; }
+        .mobile-menu.active { display: flex; }
+
+        /* --- HERO --- */
+        .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 120px; }
+        .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: 50px; }
+        .hero h1 { font-size: 4rem; line-height: 1.1; font-weight: 700; margin-bottom: 20px; background: linear-gradient(to right, #fff, #cbd5e1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .typewriter { font-family: 'Courier New', monospace; color: var(--accent); font-size: 1.4rem; height: 30px; margin-bottom: 30px; display: block; }
+        .hero p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.7; max-width: 500px; margin-bottom: 30px; }
+
+        .resume-btn { display: inline-flex; align-items: center; gap: 10px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border); padding: 12px 30px; border-radius: 50px; color: var(--text-main); text-decoration: none; font-weight: 600; margin-bottom: 30px; transition: all 0.3s ease; backdrop-filter: blur(10px); }
+        .resume-btn:hover { background: var(--primary); border-color: var(--primary); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3); }
+
+        .image-card { position: relative; width: 100%; max-width: 400px; height: 500px; border-radius: 24px; overflow: hidden; border: 1px solid var(--border); margin: 0 auto; transform-style: preserve-3d; transform: perspective(1000px); pointer-events: none; }
+        .image-card * { pointer-events: auto; }
+        .hero-img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+        .image-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 25px; background: linear-gradient(to top, rgba(2, 6, 23, 0.9) 0%, transparent 100%); display: flex; justify-content: space-between; align-items: flex-end; transform: translateZ(20px); }
+
+        /* --- TECH STACK --- */
+        .tech-section { padding: 80px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: rgba(2, 6, 23, 0.5); position: relative; z-index: 2; }
+        .tech-grid { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+        .tech-item { display: flex; flex-direction: column; align-items: center; gap: 10px; color: var(--text-muted); transition: 0.3s; }
+        .tech-item i { font-size: 2rem; color: var(--text-main); }
+        .tech-item span { font-size: 0.85rem; font-weight: 500; }
+        .tech-item:hover { transform: translateY(-5px); color: var(--primary); }
+        .tech-item:hover i { color: var(--primary); }
+
+        /* --- PROJECTS --- */
+        .section-title { font-size: 2.5rem; margin-bottom: 60px; text-align: center; }
+        .project-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px; padding: 40px; margin-bottom: 30px; transition: 0.3s; height: 100%; display: flex; flex-direction: column;}
+        .project-card:hover { border-color: rgba(59, 130, 246, 0.4); background: rgba(30, 41, 59, 0.6); transform: translateY(-5px); }
+        .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+        .folder-icon { font-size: 2.5rem; color: var(--primary); }
+        .external-link { color: var(--text-muted); font-size: 1.2rem; transition: 0.3s; }
+        .external-link:hover { color: var(--text-main); }
+        .project-body { flex-grow: 1; display: flex; flex-direction: column; }
+        .project-body h3 { font-size: 1.5rem; margin-bottom: 10px; }
+        .project-body p { color: var(--text-muted); line-height: 1.6; font-size: 0.95rem; flex-grow: 1;}
+        .tags { margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap;}
+        .tag { font-size: 0.8rem; color: var(--primary); background: rgba(59, 130, 246, 0.1); padding: 4px 10px; border-radius: 4px; }
+
+        /* Anchor offset for the fixed pill nav, so section headings are never hidden behind it */
+        section[id] { scroll-margin-top: 110px; }
+
+        /* Whole-card click: the corner link stretches over the whole card */
+        .project-card { position: relative; }
+        .project-card:has(a.external-link) { cursor: pointer; }
+        .project-card a.external-link::after { content: ""; position: absolute; inset: 0; }
+
+        .menu-toggle { background: none; border: none; font-family: inherit; }
+
+        /* Screen-reader-only labels for form fields */
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+        /* --- CONTACT --- */
+        .contact-section { padding: 100px 0; text-align: center; }
+        .contact-box { background: linear-gradient(145deg, rgba(30, 41, 59, 0.4), rgba(15, 23, 42, 0.6)); border: 1px solid var(--border); border-radius: 24px; padding: 60px 30px; max-width: 800px; margin: 0 auto; backdrop-filter: blur(10px); }
+        .contact-box h2 { font-size: 2.5rem; margin-bottom: 15px; }
+        .contact-box p { color: var(--text-muted); margin-bottom: 40px; }
+        
+        .social-footer { margin-top: 50px; margin-bottom: 40px; display: flex; justify-content: center; gap: 25px; }
+        .social-footer a { display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--text-main); font-size: 1.5rem; transition: all 0.3s ease; }
+        .social-footer a:hover { background: var(--primary); color: white; transform: translateY(-5px) scale(1.1); box-shadow: 0 10px 20px rgba(59, 130, 246, 0.4); }
+
+        .or-divider { display: flex; align-items: center; color: var(--text-muted); margin: 30px 0; font-size: 0.9rem; letter-spacing: 1px; }
+        .or-divider::before, .or-divider::after { content: ""; flex: 1; height: 1px; background: rgba(255,255,255,0.1); }
+        .or-divider span { padding: 0 15px; }
+
+        .contact-form { display: grid; gap: 20px; text-align: left; margin-top: 30px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .form-input { width: 100%; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); padding: 15px; border-radius: 12px; color: white; font-size: 1rem; outline: none; transition: 0.3s; }
+        .form-input:focus { border-color: var(--primary); background-color: rgba(59, 130, 246, 0.05); }
+        textarea.form-input { resize: vertical; min-height: 120px; }
+        .submit-btn { background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; border: none; padding: 15px; border-radius: 12px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: 0.3s; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .submit-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4); }
+        #form-result { text-align: center; margin-top: 15px; font-weight: 500; display: none; }
+        footer { text-align: center; padding: 40px 0; color: rgba(255,255,255,0.2); font-size: 0.9rem; border-top: 1px solid var(--border); position: relative; z-index: 2; }
+
+        @media (max-width: 900px) {
+            header { top: 10px; width: 100%; }
+            nav { width: 90%; padding: 15px 20px; justify-content: space-between; }
+            .nav-links, .contact-btn { display: none; }
+            .menu-toggle { display: block; }
+            .hero { padding-top: 100px; min-height: auto; padding-bottom: 50px; }
+            .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+            .hero h1 { font-size: 2.8rem; }
+            .hero p { margin: 0 auto 30px auto; }
+            .typewriter { margin: 0 auto 20px auto; }
+            .resume-btn { margin: 0 auto 30px auto; }
+            .hero-content div { justify-content: center; }
+            .image-card { height: 350px; max-width: 300px; }
+            .form-row { grid-template-columns: 1fr; }
+            .project-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="particles-js"></div>
+
+    <header>
+        <nav>
+            <a href="#" class="logo">Yash<span> Sharma</span></a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Tech Stack</a>
+                <a href="#work">Projects</a>
+                <a href="#contact" class="contact-btn">Contact Me</a>
+            </div>
+            <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="#about" onclick="toggleMenu()">About</a>
+                <a href="#skills" onclick="toggleMenu()">Skills</a>
+                <a href="#work" onclick="toggleMenu()">Projects</a>
+                <a href="#contact" onclick="toggleMenu()">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero container" id="about">
+        <div class="hero-grid">
+            <div class="hero-content reveal-left">
+                <h1>Building Digital <br>Excellence.</h1>
+                <span class="typewriter" id="typewriter"></span>
+                <p>I am Yash Sharma, an innovative Full-Stack Web Developer building scalable ERP systems and secure applications. Passionate about utilizing AI-assisted workflows to solve complex software problems.</p>
+                <div><a href="resume.html" target="_blank" class="resume-btn"><i class="fas fa-file-alt"></i> View Resume</a></div>
+                <div style="display: flex; gap: 20px; justify-content: flex-start; margin-top: 10px;">
+                    <a href="https://github.com/yash-sharmax" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="color:var(--text-muted); font-size:1.5rem;"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/yashsharmax" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="color:var(--text-muted); font-size:1.5rem;"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://instagram.com/yashandmatrix" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="color:var(--text-muted); font-size:1.5rem;"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="image-card" data-tilt data-tilt-glare data-tilt-max-glare="0.3">
+                <img src="photo.jpg" alt="Yash Sharma" class="hero-img"> <div class="image-overlay"><div><h3 style="font-size: 1.2rem;">Yash Sharma</h3><span style="font-size: 0.8rem; color: var(--primary);">Developer</span></div><i class="fas fa-arrow-right" style="color:white;"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tech-section" id="skills">
+        <div class="container">
+            <div class="tech-grid reveal-bottom">
+                <div class="tech-item"><i class="fab fa-html5"></i><span>HTML5/CSS3</span></div>
+                <div class="tech-item"><i class="fab fa-js"></i><span>JavaScript</span></div>
+                <div class="tech-item"><i class="fas fa-database"></i><span>Firebase</span></div>
+                <div class="tech-item"><i class="fas fa-network-wired"></i><span>APIs</span></div>
+                <div class="tech-item"><i class="fas fa-robot"></i><span>AI Prompts</span></div>
+                <div class="tech-item"><i class="fas fa-shield-alt"></i><span>Security</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="work" style="padding-top: 100px;">
+        <h2 class="section-title reveal-bottom">Selected Works</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;" class="project-grid">
+            
+            <div class="project-card reveal-bottom">
+                <div class="project-header"><i class="fas fa-brain folder-icon"></i><a href="https://pragyaai.yashx.xyz" target="_blank" rel="noopener noreferrer" class="external-link" aria-label="Open Pragya AI live site"><i class="fas fa-external-link-alt"></i></a></div>
+                <div class="project-body">
+                    <h3>Pragya AI</h3>
+                    <p>An AI chat workspace with four Indian Knowledge System personas — Veda, Neeti, Ganita and Sarathi — answering from classical Indian wisdom. Exhibited at the Medicaps University IKS Exhibition.</p>
+                    <div class="tags"><span class="tag">Next.js</span><span class="tag">Supabase</span><span class="tag">Gemini + Groq</span></div>
+                </div>
+            </div>
+
+            <div class="project-card reveal-bottom">
+                <div class="project-header"><i class="far fa-folder folder-icon"></i><a href="https://digishala.netlify.app" target="_blank" rel="noopener noreferrer" class="external-link" aria-label="Open DigiShala ERP live site"><i class="fas fa-external-link-alt"></i></a></div>
+                <div class="project-body">
+                    <h3>DigiShala - ERP</h3>
+                    <p>A comprehensive cloud-based school management system tailored for Tier-2/3 institutions featuring real-time databases and secure admin dashboards.</p>
+                    <div class="tags"><span class="tag">HTML/CSS</span><span class="tag">JavaScript</span><span class="tag">Firebase</span></div>
+                </div>
+            </div>
+
+            <div class="project-card reveal-bottom">
+                <div class="project-header"><i class="fas fa-book-open folder-icon"></i></div>
+                <div class="project-body">
+                    <h3>Mission Boards</h3>
+                    <p>A dynamic study management platform. Integrates secure User Login, gamified 'Daily Streak' tracking, and an automated issue reporting system.</p>
+                    <div class="tags"><span class="tag">Frontend</span><span class="tag">Auth</span></div>
+                </div>
+            </div>
+
+            <div class="project-card reveal-bottom">
+                <div class="project-header"><i class="fas fa-link folder-icon"></i><a href="https://secretlinkx.netlify.app/" target="_blank" rel="noopener noreferrer" class="external-link" aria-label="Open SecretLink Generator live site"><i class="fas fa-external-link-alt"></i></a></div>
+                <div class="project-body">
+                    <h3>SecretLink Generator</h3>
+                    <p>A fast and secure web utility designed to generate private, shareable links, focusing on streamlined UI/UX for confidentiality.</p>
+                    <div class="tags"><span class="tag">Web Utility</span><span class="tag">Security</span></div>
+                </div>
+            </div>
+
+            <div class="project-card reveal-bottom">
+                <div class="project-header"><i class="fas fa-school folder-icon"></i><a href="https://ebvmindore.netlify.app/" target="_blank" rel="noopener noreferrer" class="external-link" aria-label="Open EBVM Digital Portal live site"><i class="fas fa-external-link-alt"></i></a></div>
+                <div class="project-body">
+                    <h3>EBVM Digital Portal</h3>
+                    <p>Digitized the information system for 'School of Excellence Bal Vinay Mandir', featuring a custom Hindi/English language toggle.</p>
+                    <div class="tags"><span class="tag">UI/UX</span><span class="tag">Bilingual</span></div>
+                </div>
+            </div>
+
+            <div class="project-card reveal-bottom">
+                <div class="project-header"><i class="fas fa-lightbulb folder-icon"></i></div>
+                <div class="project-body">
+                    <h3>Inspired Yash</h3>
+                    <p>A curated personal web space developed to present and document innovative technology concepts, workflows, and ideas.</p>
+                    <div class="tags"><span class="tag">Tech Space</span><span class="tag">Ideas</span></div>
+                </div>
+            </div>
+
+            <div class="project-card reveal-bottom">
+                <div class="project-header"><i class="fas fa-database folder-icon"></i></div>
+                <div class="project-body">
+                    <h3>Internal Survey Platform</h3>
+                    <p>A dedicated data collection utility developed for school administration to securely gather, manage, and analyze internal student feedback.</p>
+                    <div class="tags"><span class="tag">Data Collection</span><span class="tag">Private</span></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-box reveal-bottom">
+                <span style="color: var(--primary); font-weight: 600; letter-spacing: 1px;">WHAT'S NEXT?</span><h2>Get In Touch</h2><p>I am currently looking for an internship and new opportunities. Whether you have a question or just want to say hi, my inbox is always open!</p>
+                <div class="social-footer">
+                    <a href="https://instagram.com/yashandmatrix" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/yashsharmax" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/yash-sharmax" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="mailto:yashsharmaup2008@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+                <div class="or-divider"><span>OR SEND A DIRECT MESSAGE</span></div>
+                <form id="contact-form" class="contact-form">
+                    <input type="hidden" name="access_key" value="301bf00e-0a48-4396-af74-d61d876a84f8">
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                    <div class="form-row"><div><label class="sr-only" for="cf-name">Your Name</label><input id="cf-name" type="text" name="name" placeholder="Your Name" class="form-input" required></div><div><label class="sr-only" for="cf-email">Email Address</label><input id="cf-email" type="email" name="email" placeholder="Email Address" class="form-input" required></div></div>
+                    <div class="form-row"><div><label class="sr-only" for="cf-phone">Mobile Number (optional)</label><input id="cf-phone" type="tel" name="phone" placeholder="Mobile Number (optional)" class="form-input"></div><div><label class="sr-only" for="cf-state">State</label><input id="cf-state" type="text" name="state" placeholder="State" class="form-input"></div></div>
+                    <div class="form-row"><div style="grid-column: span 2;"><label class="sr-only" for="cf-city">City</label><input id="cf-city" type="text" name="city" placeholder="City" class="form-input"></div></div>
+                    <label class="sr-only" for="cf-message">Your message</label><textarea id="cf-message" name="message" placeholder="Write your message here..." class="form-input" required></textarea>
+                    <button type="submit" id="submit-btn" class="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                    <div id="form-result"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer><p>&copy; <span id="year">2026</span> Yash Sharma. Built with precision.</p></footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script>
+        function toggleMenu() { const menu = document.getElementById('mobileMenu'); const btn = document.getElementById('menuToggle'); const isOpen = menu.classList.toggle('active'); if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false'); }
+        
+        const form = document.getElementById('contact-form'); const result = document.getElementById('form-result'); const submitBtn = document.getElementById('submit-btn');
+        form.addEventListener('submit', function(e) { e.preventDefault(); const originalText = submitBtn.innerHTML; submitBtn.innerHTML = "Sending... <i class='fas fa-spinner fa-spin'></i>"; const formData = new FormData(form); const object = Object.fromEntries(formData); const json = JSON.stringify(object); fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: json }).then(async (response) => { let json = await response.json(); if (response.status == 200) { result.style.display = "block"; result.style.color = "#10b981"; result.innerHTML = "Message Sent Successfully!"; submitBtn.innerHTML = "Sent <i class='fas fa-check'></i>"; form.reset(); setTimeout(() => { result.style.display = "none"; submitBtn.innerHTML = originalText; }, 5000); } else { result.style.display = "block"; result.style.color = "#ef4444"; result.innerHTML = json.message; submitBtn.innerHTML = originalText; } }).catch(error => { console.log(error); result.innerHTML = "Something went wrong!"; submitBtn.innerHTML = originalText; }); });
+
+        particlesJS("particles-js", { "particles": { "number": { "value": 80 }, "color": { "value": "#3b82f6" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5 }, "size": { "value": 3 }, "line_linked": { "enable": true, "distance": 150, "color": "#3b82f6", "opacity": 0.2, "width": 1 }, "move": { "enable": true, "speed": 2 } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }, "modes": { "grab": { "distance": 140 } } }, "retina_detect": true });
+
+        const textElement = document.getElementById('typewriter'); const phrases = ["> Full-Stack Developer", "> OSINT Researcher", "> AI Tech Explorer"]; let phraseIndex = 0, charIndex = 0, isDeleting = false; function type() { const currentPhrase = phrases[phraseIndex]; if (isDeleting) { textElement.textContent = currentPhrase.substring(0, charIndex - 1); charIndex--; } else { textElement.textContent = currentPhrase.substring(0, charIndex + 1); charIndex++; } if (!isDeleting && charIndex === currentPhrase.length) { isDeleting = true; setTimeout(type, 2000); } else if (isDeleting && charIndex === 0) { isDeleting = false; phraseIndex = (phraseIndex + 1) % phrases.length; setTimeout(type, 500); } else { setTimeout(type, isDeleting ? 100 : 150); } } document.addEventListener('DOMContentLoaded', type);
+
+        ScrollReveal().reveal('.reveal-bottom', { delay: 200, distance: '50px', origin: 'bottom', duration: 1000 });
+        ScrollReveal().reveal('.reveal-left', { delay: 200, distance: '50px', origin: 'left', duration: 1000 });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
