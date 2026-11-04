@@ -15,9 +15,10 @@ Personal portfolio of **Yash Sharma**, Full-Stack Developer and BTech student at
 
 ## Tech
 
-Plain HTML, CSS and JavaScript — no build step. Uses Google Fonts, Font Awesome,
-particles.js, Vanilla Tilt and ScrollReveal via CDN. The contact form is powered
-by Web3Forms.
+Plain HTML, CSS and JavaScript — no build step, no JS framework or animation
+libraries (reveal-on-scroll and the photo tilt are hand-rolled). Uses Google
+Fonts and Font Awesome via CDN. The contact form is powered by Web3Forms.
+Deployed on Vercel from this repository.
 
 ## Run locally
 
@@ -27,7 +28,10 @@ Open `index.html` in a browser, or serve the folder:
 npx serve .
 ```
 
-## Projects featured
+## Featured on the site
 
-Pragya AI, DigiShala ERP, Mission Boards, SecretLink (X-Vault), EBVM Digital
-Portal, Inspired Yash and an internal survey platform.
+- **Projects:** Pragya AI, DigiShala ERP, X-Vault (SecretLink), EBVM Digital
+  Portal, and a voice-controlled AI car built in Class 12 (ESP32).
+- **Hackathons:** Viksit Bharat Buildathon 2025 (1st position, Indore),
+  Void Hack(s) 8.0, Cybercrime Hackathon Bihar, Smart India Hackathon
+  (internal round qualified) and Code-E-Fiesta.

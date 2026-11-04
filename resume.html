@@ -3,438 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1024">
-    <meta name="description" content="Resume of Yash Sharma — Full-Stack Developer and BTech student at Medicaps University. Creator of Pragya AI and DigiShala ERP.">
+    <meta name="description" content="Resume of Yash Sharma — Full-Stack Developer and BTech student at Medicaps University. Creator of Pragya AI. Viksit Bharat Buildathon 2025 winner (Indore).">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-
     <title>Yash Sharma - Resume</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700;800;900&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <style>
         :root {
-            --primary: #1e3a8a;       /* Deep Blue */
-            --accent: #fbbf24;        /* Golden Accent */
-            --sidebar-bg: #111827;    /* Dark Background */
-            --text-dark: #1f2937;     
-            --text-light: #4b5563;    
-            --white: #ffffff;
+            --ink: #0f172a;
+            --ink-2: #334155;
+            --muted: #64748b;
+            --accent: #2563eb;
+            --accent-2: #7c3aed;
+            --gold: #b45309;
+            --line: #e2e8f0;
+            --side-bg: #f1f5f9;
         }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        body { background: #525659; display: flex; justify-content: center; padding: 36px; font-family: 'Plus Jakarta Sans', Arial, sans-serif; color: var(--ink); }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-print-color-adjust: exact; 
-        }
+        .page { background: #fff; width: 210mm; height: 296mm; box-shadow: 0 12px 50px rgba(0,0,0,0.5); overflow: hidden; display: flex; flex-direction: column; }
 
-        body {
-            background: #525659;
-            display: flex;
-            justify-content: center;
-            padding: 40px;
-            font-family: 'Lato', sans-serif;
-        }
+        /* ---------- HEADER ---------- */
+        .header { background: linear-gradient(120deg, #0b1226 0%, #13224d 58%, #1e2a5e 100%); color: #fff; padding: 24px 34px 20px; display: flex; gap: 22px; align-items: center; }
+        .header img { width: 92px; height: 112px; object-fit: cover; border-radius: 12px; border: 2px solid rgba(255,255,255,0.35); }
+        .header-main { flex: 1; }
+        .header h1 { font-family: 'Sora', sans-serif; font-size: 2.15rem; font-weight: 800; letter-spacing: 0.01em; line-height: 1.05; text-transform: uppercase; }
+        .header h2 { font-size: 0.98rem; font-weight: 600; color: #93c5fd; letter-spacing: 0.14em; text-transform: uppercase; margin: 5px 0 12px; }
+        .contact-row { display: flex; flex-wrap: wrap; gap: 7px 16px; font-size: 0.76rem; color: #dbeafe; }
+        .contact-row span, .contact-row a { display: inline-flex; align-items: center; gap: 6px; color: #dbeafe; text-decoration: none; }
+        .contact-row i { color: #93c5fd; font-size: 0.72rem; }
 
-        .page {
-            background: white;
-            width: 210mm;
-            height: 296mm; /* Fixed A4 Height */
-            display: grid;
-            grid-template-columns: 34% 66%;
-            box-shadow: 0 10px 50px rgba(0,0,0,0.5);
-            overflow: hidden;
-            position: relative;
-        }
+        /* ---------- BODY ---------- */
+        .body { display: grid; grid-template-columns: 65% 35%; flex: 1; }
+        .main { padding: 20px 24px 18px 34px; }
+        .side { background: var(--side-bg); padding: 20px 22px 18px; border-left: 1px solid var(--line); }
 
-        /* --- LEFT SIDEBAR --- */
-        .sidebar {
-            background-color: var(--sidebar-bg);
-            color: white;
-            padding: 30px 25px;
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            position: relative;
-            border-right: 5px solid var(--accent);
-        }
+        .sec-title { font-family: 'Sora', sans-serif; font-size: 0.86rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink);
+            display: flex; align-items: center; gap: 9px; margin: 16px 0 10px; }
+        .sec-title:first-child { margin-top: 0; }
+        .sec-title i { color: var(--accent); font-size: 0.82rem; }
+        .sec-title::after { content: ""; flex: 1; height: 2px; background: var(--line); border-radius: 2px; }
+        .side .sec-title::after { background: #cbd5e1; }
 
-        /* FRAMED PHOTO STYLE */
-        .photo-frame {
-            text-align: center;
-            margin-bottom: 5px;
-            padding: 12px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 15px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .profile-photo {
-            width: 100%;
-            max-width: 150px;
-            height: auto;
-            border-radius: 8px;
-            border: 4px solid var(--accent); 
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-            display: block;
-            margin: 0 auto;
-            pointer-events: none;
-        }
+        .summary { font-size: 0.83rem; color: var(--ink-2); line-height: 1.5; text-align: justify; }
 
-        /* Sidebar Headers */
-        .side-title {
-            font-family: 'Raleway', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--accent);
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-            padding-bottom: 8px;
-            margin-bottom: 15px;
-        }
+        /* Projects */
+        .proj { margin-bottom: 11px; padding-left: 13px; position: relative; }
+        .proj::before { content: ""; position: absolute; left: 0; top: 4px; bottom: 4px; width: 3px; border-radius: 2px; background: linear-gradient(180deg, var(--accent), var(--accent-2)); }
+        .proj-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+        .proj-name { font-size: 0.9rem; font-weight: 800; color: var(--ink); }
+        .proj-name a { color: var(--accent); text-decoration: none; font-size: 0.72rem; margin-left: 4px; }
+        .proj-tag { font-size: 0.62rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); background: #eef2ff; padding: 2px 7px; border-radius: 4px; white-space: nowrap; }
+        .proj-link { display: block; font-size: 0.72rem; color: var(--accent); font-weight: 600; text-decoration: none; margin: 1px 0 2px; }
+        .proj p { font-size: 0.78rem; color: var(--ink-2); line-height: 1.42; }
+        .proj .stack { font-size: 0.72rem; color: var(--muted); font-weight: 600; }
 
-        /* Contact Items */
-        .contact-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.8rem;
-            color: #d1d5db;
-            word-break: break-all;
-        }
-        .contact-item i { color: var(--accent); width: 16px; text-align: center; flex-shrink: 0; }
-        .contact-item a { color: #d1d5db; text-decoration: none; transition: 0.3s; pointer-events: auto; }
-        .contact-item a:hover { color: var(--accent); }
+        /* Hackathons */
+        .hack { display: flex; gap: 10px; margin-bottom: 8px; font-size: 0.79rem; }
+        .hack i { color: var(--accent); margin-top: 3px; font-size: 0.72rem; }
+        .hack.win i { color: var(--gold); }
+        .hack b { color: var(--ink); }
+        .hack span { color: var(--ink-2); line-height: 1.4; }
+        .hack .res { font-weight: 800; color: var(--gold); white-space: nowrap; }
+        .hack .res.blue { color: var(--accent); }
 
-        /* Education */
-        .edu-box { margin-bottom: 18px; }
-        .edu-degree { font-weight: 700; font-size: 0.9rem; color: var(--white); display: block; margin-bottom: 2px; }
-        .edu-school { font-size: 0.8rem; color: #9ca3af; display: block; margin-bottom: 2px; }
-        .edu-year { font-size: 0.75rem; color: var(--accent); font-weight: 700; }
-        .edu-detail { font-size: 0.75rem; color: #d1d5db; margin-top: 3px; font-style: italic; }
+        /* Sidebar blocks */
+        .side h4 { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 12px 0 6px; }
+        .side h4:first-of-type { margin-top: 0; }
+        .tags { display: flex; flex-wrap: wrap; gap: 5px; }
+        .tag { font-size: 0.7rem; font-weight: 700; color: var(--ink-2); background: #fff; border: 1px solid #cbd5e1; padding: 3px 8px; border-radius: 999px; }
+        .tag.learn { border-style: dashed; color: var(--accent-2); }
+        .edu { margin-bottom: 11px; }
+        .edu b { display: block; font-size: 0.82rem; color: var(--ink); }
+        .edu span { display: block; font-size: 0.74rem; color: var(--ink-2); }
+        .edu .yr { font-size: 0.7rem; font-weight: 800; color: var(--accent); letter-spacing: 0.04em; }
+        .link-list { list-style: none; font-size: 0.76rem; }
+        .link-list li { margin-bottom: 6px; display: flex; align-items: center; gap: 8px; color: var(--ink-2); }
+        .link-list i { color: var(--accent); width: 14px; text-align: center; }
+        .link-list a { color: var(--ink-2); text-decoration: none; font-weight: 600; word-break: break-all; }
+        .qr-area { margin-top: 16px; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 10px; text-align: center; }
+        .qr-area img { width: 76px; }
+        .qr-area a { display: block; margin-top: 5px; font-size: 0.68rem; font-weight: 800; color: var(--accent); text-decoration: none; }
 
-        /* Skills Tags */
-        .skill-group { display: flex; flex-wrap: wrap; gap: 6px; }
-        .skill-tag {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: #e5e7eb;
-        }
+        .no-print { position: fixed; top: 20px; right: 20px; background: var(--ink); color: #fff; padding: 11px 20px; border-radius: 9px; cursor: pointer; font-weight: 700; font-family: inherit; box-shadow: 0 6px 18px rgba(0,0,0,0.45); border: 2px solid #f59e0b; z-index: 1000; }
 
-        /* QR & Link */
-        .qr-area {
-            margin-top: auto;
-            text-align: center;
-            background: white;
-            padding: 12px;
-            border-radius: 8px;
-            color: var(--text-dark);
-        }
-        .qr-img { width: 80px; pointer-events: none; }
-        .qr-link {
-            display: block;
-            margin-top: 8px;
-            font-size: 0.65rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-            word-break: break-all;
-            pointer-events: auto;
-        }
-        .qr-link:hover { text-decoration: underline; color: var(--text-dark); }
-
-        /* --- RIGHT MAIN CONTENT --- */
-        .main {
-            padding: 40px 35px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Header */
-        .header { margin-bottom: 20px; }
-        .header h1 {
-            font-family: 'Raleway', sans-serif;
-            font-size: 2.8rem;
-            font-weight: 900;
-            color: var(--text-dark);
-            line-height: 1;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-            letter-spacing: -1px;
-        }
-        .header h2 {
-            font-family: 'Raleway', sans-serif;
-            font-size: 1.1rem;
-            color: var(--primary);
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        /* Content Sections */
-        .section-header {
-            font-family: 'Raleway', sans-serif;
-            font-size: 1rem;
-            font-weight: 800;
-            color: var(--text-dark);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .section-header::after {
-            content: '';
-            flex: 1;
-            height: 2px;
-            background: #e5e7eb;
-        }
-        .section-header i { color: var(--primary); font-size: 0.9rem; }
-
-        .summary {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            line-height: 1.5;
-            margin-bottom: 25px;
-            text-align: justify;
-        }
-
-        /* Project Cards */
-        .project-item { margin-bottom: 14px; position: relative; padding-left: 15px; }
-        .project-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 5px;
-            bottom: 5px;
-            width: 3px;
-            background: var(--primary);
-            border-radius: 2px;
-        }
-
-        .project-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 2px;
-        }
-        .project-title { font-size: 0.95rem; font-weight: 700; color: var(--text-dark); }
-        .project-title a { color: var(--primary); text-decoration: none; margin-left: 5px; }
-        .project-tag { font-size: 0.65rem; font-weight: 700; color: var(--text-light); text-transform: uppercase; background: #f3f4f6; padding: 2px 6px; border-radius: 3px; }
-        
-        .project-link { display: block; font-size: 0.75rem; color: var(--primary); font-weight: 600; text-decoration: none; margin-bottom: 4px; }
-        .project-link:hover { text-decoration: underline; color: var(--text-dark); }
-
-        .desc { font-size: 0.8rem; color: var(--text-light); line-height: 1.4; }
-        .desc ul { padding-left: 16px; margin-top: 4px; }
-        .desc li { margin-bottom: 2px; }
-
-        /* Print Button (Hidden in Print) */
-        .no-print {
-            position: fixed; top: 20px; right: 20px;
-            background: var(--sidebar-bg); color: white;
-            padding: 10px 20px; border-radius: 8px;
-            cursor: pointer; font-weight: 700;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-            border: 2px solid var(--accent);
-            z-index: 1000;
-        }
-
-        /* FORCE A4 PDF LAYOUT */
         @page { size: A4; margin: 0; }
         @media print {
             body { background: none; padding: 0; display: block; }
             .page { box-shadow: none; margin: 0; width: 210mm; height: 296mm; page-break-after: avoid; page-break-inside: avoid; }
             .no-print { display: none; }
-            .sidebar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
         }
-        
-        /* Layout Lock for Mobile */
         @media screen and (max-width: 900px) {
-            body { align-items: flex-start; overflow: auto; transform-origin: top left; }
+            body { align-items: flex-start; overflow: auto; }
             .page { min-width: 210mm; min-height: 296mm; }
         }
     </style>
 </head>
 <body>
 
-    <button class="no-print" onclick="window.print()">
-        <i class="fas fa-print"></i> Download PDF
-    </button>
+    <button class="no-print" onclick="window.print()"><i class="fas fa-print"></i> Download PDF</button>
 
     <div class="page">
-        <aside class="sidebar">
-            <div class="photo-frame">
-                <img src="photo.jpg" alt="Yash Sharma" class="profile-photo">
-            </div>
-
-            <div>
-                <div class="side-title">Contact</div>
-                <ul class="contact-list">
-                    <li class="contact-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <span>+91 9201980161</span>
-                    </li>
-                    <li class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:yashsharmaup2008@gmail.com">yashsharmaup2008@gmail.com</a>
-                    </li>
-                    <li class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Indore, Madhya Pradesh</span>
-                    </li>
-                    <li class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <a href="https://linkedin.com/in/yashsharmax" target="_blank">in/yashsharmax</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div>
-                <div class="side-title">Education</div>
-                <div class="edu-box">
-                    <span class="edu-degree">B.Tech (Pursuing)</span>
-                    <span class="edu-school">Medicaps University, Indore</span>
-                    <span class="edu-year">Currently Pursuing</span>
-                </div>
-                <div class="edu-box">
-                    <span class="edu-degree">Class 12th (PCM)</span>
-                    <span class="edu-school">School of Excellence Bal Vinay Mandir</span>
-                    <span class="edu-year">Passed (62%)</span>
-                </div>
-                <div class="edu-box">
-                    <span class="edu-degree">Class 10th</span>
-                    <span class="edu-school">School of Excellence Bal Vinay Mandir</span>
-                    <span class="edu-year">Passed (86.6%)</span>
-                    <span class="edu-detail">Distinction in All Subjects</span>
-                </div>
-            </div>
-
-            <div>
-                <div class="side-title">Core Skills</div>
-                <div class="skill-group">
-                    <span class="skill-tag">HTML5 / CSS3</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">Firebase & BaaS</span>
-                    <span class="skill-tag">API Integration</span>
-                    <span class="skill-tag">Responsive Design</span>
-                    <span class="skill-tag">AI Prompting</span>
-                    <span class="skill-tag">Git / GitHub</span>
-                </div>
-            </div>
-
-            <div class="qr-area">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://yashx.xyz/" alt="Portfolio QR" class="qr-img">
-                <a href="https://yashx.xyz/" target="_blank" rel="noopener noreferrer" class="qr-link">
-                    yashx.xyz <i class="fas fa-external-link-alt" style="font-size:0.6rem;"></i>
-                </a>
-            </div>
-        </aside>
-
-        <main class="main">
-            <div class="header">
+        <div class="header">
+            <img src="photo.jpg" alt="Yash Sharma">
+            <div class="header-main">
                 <h1>Yash Sharma</h1>
-                <h2>Full-Stack Web Developer</h2>
-            </div>
-
-            <div class="summary">
-                Innovative Full-Stack Developer with hands-on experience building scalable ERP systems and secure applications. Eager to leverage my skills in API integration, database management, and AI-assisted coding workflows to deliver high-impact web solutions.
-            </div>
-
-            <div>
-                <div class="section-header">
-                    <i class="fas fa-laptop-code"></i> Live Projects
-                </div>
-
-                <div class="project-item">
-                    <div class="project-top">
-                        <span class="project-title">Pragya AI — IKS Chat Platform <a href="https://pragyaai.yashx.xyz" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt" style="font-size:0.7rem;"></i></a></span>
-                        <span class="project-tag">AI / Full Stack</span>
-                    </div>
-                    <a href="https://pragyaai.yashx.xyz" target="_blank" rel="noopener noreferrer" class="project-link">https://pragyaai.yashx.xyz</a>
-                    <div class="desc">
-                        An AI chat workspace with four Indian Knowledge System personas (Veda, Neeti, Ganita, Sarathi), exhibited at the Medicaps University IKS Exhibition.
-                        <ul>
-                            <li><strong>Tech Stack:</strong> Next.js, Supabase, Gemini, Groq.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-top">
-                        <span class="project-title">DigiShala - Cloud School ERP <a href="https://digishala.netlify.app" target="_blank"><i class="fas fa-external-link-alt" style="font-size:0.7rem;"></i></a></span>
-                        <span class="project-tag">Full Stack</span>
-                    </div>
-                    <a href="https://digishala.netlify.app" target="_blank" class="project-link">https://digishala.netlify.app</a>
-                    <div class="desc">
-                        A comprehensive school management system designed for Tier-2/3 institutions.
-                        <ul>
-                            <li><strong>Tech Stack:</strong> HTML, CSS, JavaScript, Firebase.</li>
-                            <li>Engineered secure admin dashboards and real-time database structures.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-top">
-                        <span class="project-title">Mission Boards Platform</span>
-                        <span class="project-tag">Frontend & Auth</span>
-                    </div>
-                    <div class="desc">
-                        A dynamic study management platform for board exam preparation.
-                        <ul>
-                            <li>Features secure <strong>User Login</strong> and an Issue Reporting system.</li>
-                            <li>Includes a gamified 'Daily Streak' tracking mechanism.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-top">
-                        <span class="project-title">SecretLink Generator <a href="https://secretlinkx.netlify.app/" target="_blank"><i class="fas fa-external-link-alt" style="font-size:0.7rem;"></i></a></span>
-                        <span class="project-tag">Web Utility</span>
-                    </div>
-                    <a href="https://secretlinkx.netlify.app/" target="_blank" class="project-link">https://secretlinkx.netlify.app</a>
-                    <div class="desc">
-                        A fast and secure web utility designed for generating private, shareable links.
-                        <ul>
-                            <li>Focuses on streamlined UI/UX for quick data sharing and confidentiality.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-top">
-                        <span class="project-title">EBVM Bilingual Website <a href="https://ebvmindore.netlify.app/" target="_blank"><i class="fas fa-external-link-alt" style="font-size:0.7rem;"></i></a></span>
-                        <span class="project-tag">UI/UX</span>
-                    </div>
-                    <a href="https://ebvmindore.netlify.app/" target="_blank" class="project-link">https://ebvmindore.netlify.app</a>
-                    <div class="desc">
-                        Digitized the information system for 'School of Excellence Bal Vinay Mandir' with a custom Hindi/English language toggle.
-                    </div>
-                </div>
-            </div> 
-
-            <div>
-                <div class="section-header">
-                    <i class="fas fa-lightbulb"></i> Research & Interests
-                </div>
-                <div class="desc">
-                    <ul>
-                        <li><strong>Tech Exploration (Inspired Yash):</strong> Curating a personal web space to present and document innovative technology concepts and ideas.</li>
-                        <li><strong>Digital Security:</strong> Passionate about learning secure coding practices and system architectures to build defense mechanisms.</li>
-                        <li><strong>Strategic Thinking:</strong> Competitive Chess player focusing on long-term strategy and logic building.</li>
-                    </ul>
+                <h2>Full-Stack Developer</h2>
+                <div class="contact-row">
+                    <span><i class="fas fa-phone-alt"></i> +91 9201980161</span>
+                    <a href="mailto:yashsharmaup2008@gmail.com"><i class="fas fa-envelope"></i> yashsharmaup2008@gmail.com</a>
+                    <span><i class="fas fa-map-marker-alt"></i> Indore, Madhya Pradesh</span>
+                    <a href="https://yashx.xyz" target="_blank" rel="noopener noreferrer"><i class="fas fa-globe"></i> yashx.xyz</a>
+                    <a href="https://github.com/yash-sharmax" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> github.com/yash-sharmax</a>
+                    <a href="https://linkedin.com/in/yashsharmax" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> in/yashsharmax</a>
                 </div>
             </div>
+        </div>
 
-        </main>
+        <div class="body">
+            <main class="main">
+                <div class="sec-title"><i class="fas fa-user"></i> Professional Summary</div>
+                <p class="summary">Full-Stack Developer and BTech student at Medicaps University with hands-on experience building scalable ERP systems, secure web applications and AI-powered products. Creator of Pragya AI, an Indian Knowledge System chat platform exhibited at the Medicaps University IKS Exhibition. Won 1st position in Indore at the Viksit Bharat Buildathon 2025 and have competed in multiple national-level hackathons, including Smart India Hackathon and Void Hack(s) 8.0.</p>
+
+                <div class="sec-title"><i class="fas fa-laptop-code"></i> Projects</div>
+
+                <div class="proj">
+                    <div class="proj-top"><span class="proj-name">Pragya AI — IKS Chat Platform <a href="https://pragyaai.yashx.xyz" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a></span><span class="proj-tag">AI · Full Stack</span></div>
+                    <a class="proj-link" href="https://pragyaai.yashx.xyz" target="_blank" rel="noopener noreferrer">pragyaai.yashx.xyz</a>
+                    <p>AI chat workspace with four Indian Knowledge System personas (Veda, Neeti, Ganita, Sarathi) answering in Hindi, Hinglish and English. Exhibited at the Medicaps University IKS Exhibition, where visitors preferred its shloka-backed answers over generic AI tools.</p>
+                    <p class="stack">Next.js · Supabase (Auth + Postgres) · Gemini · Groq · Vercel</p>
+                </div>
+
+                <div class="proj">
+                    <div class="proj-top"><span class="proj-name">DigiShala — Cloud School ERP <a href="https://digishala.netlify.app" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a></span><span class="proj-tag">Full Stack</span></div>
+                    <a class="proj-link" href="https://digishala.netlify.app" target="_blank" rel="noopener noreferrer">digishala.netlify.app</a>
+                    <p>School management system for Tier-2/3 institutions with secure role-based dashboards (Principal / Teacher / Parent) and real-time database structures.</p>
+                    <p class="stack">HTML · CSS · JavaScript · Firebase</p>
+                </div>
+
+                <div class="proj">
+                    <div class="proj-top"><span class="proj-name">Voice-Controlled AI Car</span><span class="proj-tag">IoT · Class 12</span></div>
+                    <p>Built a WiFi-connected, voice-controlled car in Class 12 using ESP32 modules, DC motors, a motor driver/controller and a battery pack. The car responded to voice commands and could talk back and interact with us.</p>
+                    <p class="stack">ESP32 · Motor Driver · Embedded C / IoT</p>
+                </div>
+
+                <div class="proj">
+                    <div class="proj-top"><span class="proj-name">X-Vault — SecretLink <a href="https://secretlinkx.netlify.app/" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a></span><span class="proj-tag">Web Utility</span></div>
+                    <a class="proj-link" href="https://secretlinkx.netlify.app/" target="_blank" rel="noopener noreferrer">secretlinkx.netlify.app</a>
+                    <p>End-to-end encrypted secret messenger — share a private payload through a single link that reveals itself only to its holder.</p>
+                    <p class="stack">JavaScript · E2E Encryption · UI/UX</p>
+                </div>
+
+                <div class="proj">
+                    <div class="proj-top"><span class="proj-name">EBVM Digital Portal <a href="https://ebvmindore.netlify.app/" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a></span><span class="proj-tag">UI/UX</span></div>
+                    <a class="proj-link" href="https://ebvmindore.netlify.app/" target="_blank" rel="noopener noreferrer">ebvmindore.netlify.app</a>
+                    <p>Digitized the information system for the School of Excellence Bal Vinay Mandir, Indore, with a custom Hindi/English language toggle.</p>
+                    <p class="stack">HTML · CSS · JavaScript · Bilingual UI</p>
+                </div>
+
+                <div class="sec-title"><i class="fas fa-trophy"></i> Hackathons &amp; Achievements</div>
+
+                <div class="hack win"><i class="fas fa-trophy"></i><span><b>Viksit Bharat Buildathon 2025</b> — <span class="res">1st Position, Indore</span> · Won while in Class 12 at the national buildathon.</span></div>
+                <div class="hack"><i class="fas fa-code"></i><span><b>Void Hack(s) 8.0</b> — SVVV College, Indore, in collaboration with the Indore Police Commissionerate · 36-hour offline hackathon.</span></div>
+                <div class="hack"><i class="fas fa-shield-alt"></i><span><b>Cybercrime Hackathon, Bihar</b> — Online · Worked 36 hours on the same problem statement as Void Hack(s).</span></div>
+                <div class="hack"><i class="fas fa-flag"></i><span><b>Smart India Hackathon</b> — <span class="res blue">Internal Round Qualified</span> · At college level.</span></div>
+                <div class="hack"><i class="fas fa-university"></i><span><b>Code-E-Fiesta</b> — Inter-college hackathon hosted at Medicaps University, Indore.</span></div>
+            </main>
+
+            <aside class="side">
+                <div class="sec-title"><i class="fas fa-tools"></i> Skills</div>
+
+                <h4>Languages I Code In</h4>
+                <div class="tags">
+                    <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Python</span><span class="tag">JavaScript</span>
+                </div>
+
+                <h4>Currently Learning</h4>
+                <div class="tags">
+                    <span class="tag learn">C</span><span class="tag learn">C++</span>
+                </div>
+
+                <h4>Tools &amp; Platforms</h4>
+                <div class="tags">
+                    <span class="tag">Supabase</span><span class="tag">MongoDB Atlas</span><span class="tag">Vercel</span><span class="tag">Firebase</span><span class="tag">Git &amp; GitHub</span><span class="tag">API Integration</span><span class="tag">AI-Assisted Workflows</span><span class="tag">Responsive Design</span>
+                </div>
+
+                <div class="sec-title" style="margin-top:20px;"><i class="fas fa-graduation-cap"></i> Education</div>
+
+                <div class="edu">
+                    <b>B.Tech — Pursuing</b>
+                    <span>Medicaps University, Indore</span>
+                    <span class="yr">CURRENTLY PURSUING</span>
+                </div>
+                <div class="edu">
+                    <b>Class 12th (PCM) — 62%</b>
+                    <span>School of Excellence Bal Vinay Mandir, Indore</span>
+                </div>
+                <div class="edu">
+                    <b>Class 10th — 86.6%</b>
+                    <span>School of Excellence Bal Vinay Mandir, Indore</span>
+                    <span class="yr">DISTINCTION IN ALL SUBJECTS</span>
+                </div>
+
+                <div class="sec-title" style="margin-top:20px;"><i class="fas fa-link"></i> Links</div>
+                <ul class="link-list">
+                    <li><i class="fas fa-globe"></i><a href="https://yashx.xyz" target="_blank" rel="noopener noreferrer">yashx.xyz</a></li>
+                    <li><i class="fab fa-github"></i><a href="https://github.com/yash-sharmax" target="_blank" rel="noopener noreferrer">github.com/yash-sharmax</a></li>
+                    <li><i class="fab fa-linkedin"></i><a href="https://linkedin.com/in/yashsharmax" target="_blank" rel="noopener noreferrer">linkedin.com/in/yashsharmax</a></li>
+                    <li><i class="fab fa-instagram"></i><a href="https://instagram.com/yashandmatrix" target="_blank" rel="noopener noreferrer">instagram.com/yashandmatrix</a></li>
+                </ul>
+
+                <div class="qr-area">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://yashx.xyz/" alt="Portfolio QR">
+                    <a href="https://yashx.xyz/" target="_blank" rel="noopener noreferrer">yashx.xyz</a>
+                </div>
+            </aside>
+        </div>
     </div>
 
 </body>
