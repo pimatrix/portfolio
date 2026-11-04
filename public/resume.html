@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024">
+    <meta name="description" content="Resume of Yash Sharma — Full-Stack Developer (AI-Assisted Developer) and BTech student at Medicaps University. Creator of Pragya AI. Viksit Bharat Buildathon 2025 winner (Indore).">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <title>Yash Sharma - Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Black & white printer friendly: white background, black text, thin lines only — no dark blocks. */
+        :root {
+            --ink: #000000;
+            --ink-2: #222222;
+            --muted: #444444;
+            --line: #000000;
+            --line-soft: #999999;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        body { background: #e8e8e8; display: flex; justify-content: center; padding: 36px; font-family: 'Plus Jakarta Sans', Arial, sans-serif; color: var(--ink); }
+
+        .page { background: #ffffff; width: 210mm; height: 296mm; box-shadow: 0 12px 50px rgba(0,0,0,0.35); overflow: hidden; display: flex; flex-direction: column; padding: 34px 38px 28px; }
+
+        /* ---------- HEADER ---------- */
+        .header { display: flex; gap: 22px; align-items: flex-start; }
+        .header-main { flex: 1; }
+        .header h1 { font-family: 'Sora', sans-serif; font-size: 2.3rem; font-weight: 800; line-height: 1.02; letter-spacing: 0.01em; text-transform: uppercase; }
+        .header h2 { font-size: 0.92rem; font-weight: 700; color: var(--ink-2); letter-spacing: 0.13em; text-transform: uppercase; margin: 6px 0 4px; }
+        .header .ai-note { font-size: 0.78rem; color: var(--muted); font-style: italic; margin-bottom: 12px; }
+        .contact-row { display: flex; flex-wrap: wrap; gap: 6px 15px; font-size: 0.76rem; color: var(--ink-2); }
+        .contact-row span, .contact-row a { display: inline-flex; align-items: center; gap: 6px; color: var(--ink-2); text-decoration: none; }
+        .contact-row i { font-size: 0.72rem; }
+        .header img { width: 88px; height: 104px; object-fit: cover; object-position: top; border: 1.5px solid var(--ink); }
+        .rule { border: none; border-top: 2.5px solid var(--line); margin: 16px 0 0; }
+        .rule-thin { border: none; border-top: 1px solid var(--line); margin-top: 3px; }
+
+        /* ---------- BODY ---------- */
+        .body { display: grid; grid-template-columns: 65% 35%; flex: 1; margin-top: 6px; }
+        .main { padding: 14px 22px 0 0; }
+        .side { padding: 14px 0 0 20px; border-left: 1px solid var(--line-soft); }
+
+        .sec-title { font-family: 'Sora', sans-serif; font-size: 0.85rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase;
+            border-bottom: 1.5px solid var(--line); padding-bottom: 5px; margin: 17px 0 11px; }
+        .sec-title:first-child { margin-top: 0; }
+
+        .summary { font-size: 0.83rem; color: var(--ink-2); line-height: 1.5; text-align: justify; }
+
+        /* Projects */
+        .proj { margin-bottom: 11px; }
+        .proj-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+        .proj-name { font-size: 0.9rem; font-weight: 800; }
+        .proj-name a { color: var(--ink); text-decoration: none; font-size: 0.72rem; margin-left: 4px; }
+        .proj-tag { font-size: 0.62rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); border: 1px solid var(--ink-2); padding: 2px 7px; white-space: nowrap; }
+        .proj-link { display: block; font-size: 0.72rem; color: var(--muted); font-weight: 600; text-decoration: none; margin: 1px 0 2px; }
+        .proj p { font-size: 0.78rem; color: var(--ink-2); line-height: 1.42; }
+        .proj .stack { font-size: 0.72rem; color: var(--muted); font-weight: 700; }
+
+        /* Hackathons */
+        .hack { display: flex; gap: 9px; margin-bottom: 8px; font-size: 0.79rem; }
+        .hack i { margin-top: 3px; font-size: 0.72rem; }
+        .hack span { color: var(--ink-2); line-height: 1.4; }
+        .hack .res { font-weight: 800; color: var(--ink); text-decoration: underline; }
+
+        /* Sidebar */
+        .side h4 { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 12px 0 6px; }
+        .side h4:first-of-type { margin-top: 0; }
+        .tags { display: flex; flex-wrap: wrap; gap: 5px; }
+        .tag { font-size: 0.7rem; font-weight: 700; color: var(--ink-2); background: #fff; border: 1px solid var(--ink-2); padding: 3px 8px; border-radius: 999px; }
+        .tag.learn { border-style: dashed; }
+        .edu { margin-bottom: 11px; }
+        .edu b { display: block; font-size: 0.82rem; }
+        .edu span { display: block; font-size: 0.74rem; color: var(--ink-2); }
+        .edu .yr { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.04em; }
+        .link-list { list-style: none; font-size: 0.76rem; }
+        .link-list li { margin-bottom: 6px; display: flex; align-items: center; gap: 8px; color: var(--ink-2); }
+        .link-list i { width: 14px; text-align: center; }
+        .link-list a { color: var(--ink-2); text-decoration: none; font-weight: 600; word-break: break-all; }
+
+        .no-print { position: fixed; top: 20px; right: 20px; background: #000; color: #fff; padding: 11px 20px; border-radius: 9px; cursor: pointer; font-weight: 700; font-family: inherit; box-shadow: 0 6px 18px rgba(0,0,0,0.4); border: none; z-index: 1000; }
+
+        @page { size: A4; margin: 0; }
+        @media print {
+            body { background: none; padding: 0; display: block; }
+            .page { box-shadow: none; margin: 0; width: 210mm; height: 296mm; page-break-after: avoid; page-break-inside: avoid; }
+            .no-print { display: none; }
+        }
+        @media screen and (max-width: 900px) {
+            body { align-items: flex-start; overflow: auto; }
+            .page { min-width: 210mm; min-height: 296mm; }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="no-print" onclick="window.print()"><i class="fas fa-print"></i> Download PDF</button>
+
+    <div class="page">
+        <div class="header">
+            <div class="header-main">
+                <h1>Yash Sharma</h1>
+                <h2>Full-Stack Developer</h2>
+                <p class="ai-note">AI-Assisted Developer — builds with modern AI tools in the workflow.</p>
+                <div class="contact-row">
+                    <span><i class="fas fa-phone-alt"></i> +91 9201980161</span>
+                    <a href="mailto:yashsharmaup2008@gmail.com"><i class="fas fa-envelope"></i> yashsharmaup2008@gmail.com</a>
+                    <span><i class="fas fa-map-marker-alt"></i> Indore, Madhya Pradesh</span>
+                    <a href="https://yashx.xyz" target="_blank" rel="noopener noreferrer"><i class="fas fa-globe"></i> yashx.xyz</a>
+                    <a href="https://github.com/yash-sharmax" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> github.com/yash-sharmax</a>
+                    <a href="https://linkedin.com/in/yashsharmax" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> in/yashsharmax</a>
+                </div>
+            </div>
+            <img src="/photo.jpg" alt="Yash Sharma">
+        </div>
+        <hr class="rule">
+        <hr class="rule-thin">
+
+        <div class="body">
+            <main class="main">
+                <div class="sec-title">Professional Summary</div>
+                <p class="summary">Full-Stack Developer and BTech student at Medicaps University with hands-on experience building scalable ERP systems, secure web applications and AI-powered products. Creator of Pragya AI, an Indian Knowledge System chat platform exhibited at the Medicaps University IKS Exhibition. Won 1st position in Indore at the Viksit Bharat Buildathon 2025 and have competed in multiple national-level hackathons, including Smart India Hackathon and Void Hack(s) 8.0.</p>
+
+                <div class="sec-title">Projects</div>
+
+                <div class="proj">
+                    <div class="proj-top"><span class="proj-name">Pragya AI — IKS Chat Platform <a href="https://pragyaai.yashx.xyz" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a></span><span class="proj-tag">AI · Full Stack</span></div>
+                    <a class="proj-link" href="https://pragyaai.yashx.xyz" target="_blank" rel="noopener noreferrer">pragyaai.yashx.xyz</a>
+                    <p>AI chat workspace with four Indian Knowledge System personas (Veda, Neeti, Ganita, Sarathi) answering in Hindi, Hinglish and English. Exhibited at the Medicaps University IKS Exhibition, where visitors preferred its shloka-backed answers over generic AI tools.</p>
+                    <p class="stack">Next.js · Supabase (Auth + Postgres) · Gemini · Groq · Vercel</p>
+                </div>
+
+                <div class="proj">
+                    <div class="proj-top"><span class="proj-name">DigiShala — Cloud School ERP <a href="https://digishala.netlify.app" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a></span><span class="proj-tag">Full Stack</span></div>
+                    <a class="proj-link" href="https://digishala.netlify.app" target="_blank" rel="noopener noreferrer">digishala.netlify.app</a>
+                    <p>School management system for Tier-2/3 institutions with secure role-based dashboards (Principal / Teacher / Parent) and real-time database structures.</p>
+                    <p class="stack">HTML · CSS · JavaScript · Firebase</p>
+                </div>
+
+                <div class="proj">
+                    <div class="proj-top"><span class="proj-name">Voice-Controlled AI Car</span><span class="proj-tag">IoT · Class 12</span></div>
+                    <p>Built a WiFi-connected, voice-controlled car in Class 12 using ESP32 modules, DC motors, a motor driver/controller and a battery pack. The car responded to voice commands and could talk back and interact with us.</p>
+                    <p class="stack">ESP32 · Motor Driver · Embedded Systems / IoT</p>
+                </div>
+
+                <div class="proj">
+                    <div class="proj-top"><span class="proj-name">X-Vault — SecretLink <a href="https://secretlinkx.netlify.app/" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a></span><span class="proj-tag">Web Utility</span></div>
+                    <a class="proj-link" href="https://secretlinkx.netlify.app/" target="_blank" rel="noopener noreferrer">secretlinkx.netlify.app</a>
+                    <p>End-to-end encrypted secret messenger — share a private payload through a single link that reveals itself only to its holder.</p>
+                    <p class="stack">JavaScript · E2E Encryption · UI/UX</p>
+                </div>
+
+                <div class="proj">
+                    <div class="proj-top"><span class="proj-name">EBVM Digital Portal <a href="https://ebvmindore.netlify.app/" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a></span><span class="proj-tag">UI/UX</span></div>
+                    <a class="proj-link" href="https://ebvmindore.netlify.app/" target="_blank" rel="noopener noreferrer">ebvmindore.netlify.app</a>
+                    <p>Digitized the information system for the School of Excellence Bal Vinay Mandir, Indore, with a custom Hindi/English language toggle.</p>
+                    <p class="stack">HTML · CSS · JavaScript · Bilingual UI</p>
+                </div>
+
+                <div class="sec-title">Hackathons &amp; Achievements</div>
+
+                <div class="hack"><i class="fas fa-trophy"></i><span><b>Viksit Bharat Buildathon 2025</b> — <span class="res">1st Position, Indore</span> · Won while in Class 12 at the national buildathon.</span></div>
+                <div class="hack"><i class="fas fa-code"></i><span><b>Void Hack(s) 8.0</b> — SVVV College, Indore, in collaboration with the Indore Police Commissionerate · 36-hour offline hackathon.</span></div>
+                <div class="hack"><i class="fas fa-shield-alt"></i><span><b>Cybercrime Hackathon, Bihar</b> — Online · Worked 36 hours on the same problem statement as Void Hack(s).</span></div>
+                <div class="hack"><i class="fas fa-flag"></i><span><b>Smart India Hackathon</b> — <span class="res">Internal Round Qualified</span> · At college level.</span></div>
+                <div class="hack"><i class="fas fa-university"></i><span><b>Code-E-Fiesta</b> — Inter-college hackathon hosted at Medicaps University, Indore.</span></div>
+            </main>
+
+            <aside class="side">
+                <div class="sec-title">Skills</div>
+
+                <h4>Languages I Code In</h4>
+                <div class="tags">
+                    <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">React</span><span class="tag">Next.js</span>
+                </div>
+
+                <h4>Currently Learning</h4>
+                <div class="tags">
+                    <span class="tag learn">C</span><span class="tag learn">C++</span>
+                </div>
+
+                <h4>Tools &amp; Platforms</h4>
+                <div class="tags">
+                    <span class="tag">Supabase</span><span class="tag">MongoDB Atlas</span><span class="tag">Vercel</span><span class="tag">Firebase</span><span class="tag">Git &amp; GitHub</span><span class="tag">API Integration</span><span class="tag">AI-Assisted Workflows</span><span class="tag">Responsive Design</span>
+                </div>
+
+                <div class="sec-title" style="margin-top:20px;">Education</div>
+
+                <div class="edu">
+                    <b>B.Tech — Pursuing</b>
+                    <span>Medicaps University, Indore</span>
+                    <span class="yr">CURRENTLY PURSUING</span>
+                </div>
+                <div class="edu">
+                    <b>Class 12th (PCM) — 63.8%</b>
+                    <span>School of Excellence Bal Vinay Mandir, Indore</span>
+                </div>
+                <div class="edu">
+                    <b>Class 10th — 86.6%</b>
+                    <span>School of Excellence Bal Vinay Mandir, Indore</span>
+                    <span class="yr">DISTINCTION IN ALL SUBJECTS</span>
+                </div>
+
+                <div class="sec-title" style="margin-top:20px;">Links</div>
+                <ul class="link-list">
+                    <li><i class="fas fa-globe"></i><a href="https://yashx.xyz" target="_blank" rel="noopener noreferrer">yashx.xyz</a></li>
+                    <li><i class="fab fa-github"></i><a href="https://github.com/yash-sharmax" target="_blank" rel="noopener noreferrer">github.com/yash-sharmax</a></li>
+                    <li><i class="fab fa-linkedin"></i><a href="https://linkedin.com/in/yashsharmax" target="_blank" rel="noopener noreferrer">linkedin.com/in/yashsharmax</a></li>
+                    <li><i class="fab fa-instagram"></i><a href="https://instagram.com/yashandmatrix" target="_blank" rel="noopener noreferrer">instagram.com/yashandmatrix</a></li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+
+</body>
+</html>

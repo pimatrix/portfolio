@@ -1,31 +1,25 @@
 # Yash Sharma — Portfolio
 
-Personal portfolio of **Yash Sharma**, Full-Stack Developer and BTech student at Medicaps University.
+Personal portfolio website of **Yash Sharma**, Full-Stack Developer and BTech
+student at Medicaps University, Indore. Live at
+[portfolio-matrix-bcf3.vercel.app](https://portfolio-matrix-bcf3.vercel.app)
+(custom domain yashx.xyz to be linked).
 
-🌐 **Website:** [yashx.xyz](https://yashx.xyz)
+## Stack
 
-## What's inside
-
-| File | Purpose |
-| --- | --- |
-| `index.html` | Portfolio homepage — hero, tech stack, selected works, contact form |
-| `resume.html` | Print-ready A4 resume page (with a Download PDF button) |
-| `photo.jpg` | Profile photo |
-| `favicon.svg` | Site icon |
-
-## Tech
-
-Plain HTML, CSS and JavaScript — no build step, no JS framework or animation
-libraries (reveal-on-scroll and the photo tilt are hand-rolled). Uses Google
-Fonts and Font Awesome via CDN. The contact form is powered by Web3Forms.
-Deployed on Vercel from this repository.
+- **Next.js 14** (App Router) + **React 18**
+- Custom CSS design system — light editorial theme, custom cursor, marquee,
+  magnetic buttons, scroll reveals (no CSS framework)
+- Resume served as a static page from `public/resume.html` (A4, black & white
+  print friendly)
+- Contact form powered by Web3Forms
+- Deployed on **Vercel** from this repository
 
 ## Run locally
 
-Open `index.html` in a browser, or serve the folder:
-
 ```bash
-npx serve .
+npm install
+npm run dev
 ```
 
 ## Featured on the site
