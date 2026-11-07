@@ -19,6 +19,8 @@ export default function FormulaSheet() {
   const [q, setQ] = useState("");
   const [filter, setFilter] = useState("all"); // all | basics | <slug>
   const [showForm, setShowForm] = useState(false);
+  const [mode, setMode] = useState("add"); // add | edit | delete
+  const [editingId, setEditingId] = useState("");
   const [step, setStep] = useState(1); // 1 = details, 2 = key
   const [form, setForm] = useState({ name: "", category: "basics-trigonometry", section: "", formula: "" });
   const [key, setKey] = useState("");
@@ -84,10 +86,32 @@ export default function FormulaSheet() {
   }, [visible, catTitle]);
 
   function openForm() {
+    setMode("add");
+    setEditingId("");
     setForm({ name: "", category: filter !== "all" && filter !== "basics" ? filter : "basics-trigonometry", section: "", formula: "" });
     setKey("");
     setFormError("");
     setStep(1);
+    setShowForm(true);
+  }
+
+  function openEdit(entry) {
+    setMode("edit");
+    setEditingId(entry.id);
+    setForm({ name: entry.name, category: entry.category, section: entry.section || "", formula: entry.body });
+    setKey("");
+    setFormError("");
+    setStep(1);
+    setShowForm(true);
+  }
+
+  function openDelete(entry) {
+    setMode("delete");
+    setEditingId(entry.id);
+    setForm({ name: entry.name, category: entry.category, section: entry.section || "", formula: entry.body });
+    setKey("");
+    setFormError("");
+    setStep(2);
     setShowForm(true);
   }
 
@@ -108,23 +132,52 @@ export default function FormulaSheet() {
     setSaving(true);
     setFormError("");
     try {
-      const r = await fetch("/api/math-formulas", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ key, ...form }),
-      });
+      let r;
+      if (mode === "delete") {
+        r = await fetch("/api/math-formulas", {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ key, id: editingId }),
+        });
+      } else if (mode === "edit") {
+        r = await fetch("/api/math-formulas", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ key, id: editingId, ...form }),
+        });
+      } else {
+        r = await fetch("/api/math-formulas", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ key, ...form }),
+        });
+      }
       const d = await r.json();
       if (!r.ok) {
         setFormError(d.error || "Something went wrong.");
         setSaving(false);
         return;
       }
-      setData((prev) => ({ ...prev, entries: [...prev.entries, d.entry] }));
       setShowForm(false);
       setSaving(false);
+      if (mode === "delete") {
+        const goneId = editingId;
+        setData((prev) => ({ ...prev, entries: prev.entries.filter((e) => e.id !== goneId) }));
+        setToast("Formula deleted.");
+        setTimeout(() => setToast(""), 3000);
+        return;
+      }
+      if (mode === "edit") {
+        setData((prev) => ({
+          ...prev,
+          entries: prev.entries.map((e) => (e.id === d.entry.id ? d.entry : e)),
+        }));
+      } else {
+        setData((prev) => ({ ...prev, entries: [...prev.entries, d.entry] }));
+      }
       setFilter(d.entry.category);
       setQ("");
-      setToast("Formula added successfully.");
+      setToast(mode === "edit" ? "Formula updated successfully." : "Formula added successfully.");
       setHighlightId(d.entry.id);
       setTimeout(() => {
         const el = cardRefs.current[d.entry.id];
@@ -161,6 +214,11 @@ export default function FormulaSheet() {
             <button className="fs-add-btn" onClick={openForm}>+ Add Formula</button>
             <button className="fs-print-btn" onClick={() => window.print()}>Print</button>
           </div>
+        </div>
+      </div>
+
+      <div className="fs-nav">
+        <div className="fs-nav-inner">
           <div className="fs-chips">
             <button className={filter === "all" ? "fs-chip active" : "fs-chip"} onClick={() => setFilter("all")}>All Formulas</button>
             <button className={filter === "basics" ? "fs-chip active" : "fs-chip"} onClick={() => setFilter("basics")}>All Basics</button>
@@ -227,6 +285,12 @@ export default function FormulaSheet() {
                         ) : (
                           <div className="fs-body" dangerouslySetInnerHTML={{ __html: e.body }} />
                         )}
+                        {e.userAdded && (
+                          <div className="fs-card-actions">
+                            <button className="fs-mini-btn" onClick={() => openEdit(e)}>Edit</button>
+                            <button className="fs-mini-btn fs-mini-danger" onClick={() => openDelete(e)}>Delete</button>
+                          </div>
+                        )}
                       </article>
                     )
                   )}
@@ -236,7 +300,7 @@ export default function FormulaSheet() {
           </section>
         ))}
         <footer className="fs-footer">
-          <p>New formulas can be added only by the owner, using a security key at the final submission step.</p>
+          <p>Formulas can be added, edited or deleted only by the owner, using a security key at the final step.</p>
         </footer>
       </main>
 
@@ -245,7 +309,7 @@ export default function FormulaSheet() {
           <div className="fs-modal" onClick={(e) => e.stopPropagation()}>
             {step === 1 ? (
               <>
-                <h3>Add a New Formula</h3>
+                <h3>{mode === "edit" ? "Edit Formula" : "Add a New Formula"}</h3>
                 <label>
                   Formula name *
                   <input
@@ -284,15 +348,25 @@ export default function FormulaSheet() {
                 {formError && <p className="fs-form-error">{formError}</p>}
                 <div className="fs-modal-actions">
                   <button className="fs-btn-ghost" onClick={() => setShowForm(false)}>Cancel</button>
-                  <button className="fs-btn-primary" onClick={goToKeyStep}>Submit Formula →</button>
+                  <button className="fs-btn-primary" onClick={goToKeyStep}>{mode === "edit" ? "Save Changes →" : "Submit Formula →"}</button>
                 </div>
               </>
             ) : (
               <>
-                <h3>Final Step — Security Key</h3>
-                <p className="fs-key-note">
-                  Enter the security key to confirm adding <b>{form.name}</b> to <b>{catTitle[form.category] || form.category}</b>. Without the correct key, nothing is added.
-                </p>
+                <h3>{mode === "delete" ? "Delete Formula — Security Key" : "Final Step — Security Key"}</h3>
+                {mode === "delete" ? (
+                  <p className="fs-key-note">
+                    This will permanently delete <b>{form.name}</b> — “{form.formula}”. Enter the security key to confirm. Without the correct key, nothing is deleted.
+                  </p>
+                ) : mode === "edit" ? (
+                  <p className="fs-key-note">
+                    Enter the security key to confirm saving the changes to <b>{form.name}</b> in <b>{catTitle[form.category] || form.category}</b>. Without the correct key, nothing is changed.
+                  </p>
+                ) : (
+                  <p className="fs-key-note">
+                    Enter the security key to confirm adding <b>{form.name}</b> to <b>{catTitle[form.category] || form.category}</b>. Without the correct key, nothing is added.
+                  </p>
+                )}
                 <label>
                   Security key *
                   <input
@@ -306,9 +380,17 @@ export default function FormulaSheet() {
                 </label>
                 {formError && <p className="fs-form-error">{formError}</p>}
                 <div className="fs-modal-actions">
-                  <button className="fs-btn-ghost" onClick={() => setStep(1)} disabled={saving}>← Back</button>
-                  <button className="fs-btn-primary" onClick={submitWithKey} disabled={saving}>
-                    {saving ? "Adding…" : "Confirm & Add"}
+                  <button className="fs-btn-ghost" onClick={() => (mode === "delete" ? setShowForm(false) : setStep(1))} disabled={saving}>← Back</button>
+                  <button className={mode === "delete" ? "fs-btn-primary fs-btn-danger" : "fs-btn-primary"} onClick={submitWithKey} disabled={saving}>
+                    {saving
+                      ? mode === "delete"
+                        ? "Deleting…"
+                        : "Saving…"
+                      : mode === "delete"
+                        ? "Confirm & Delete"
+                        : mode === "edit"
+                          ? "Confirm & Save Changes"
+                          : "Confirm & Add"}
                   </button>
                 </div>
               </>

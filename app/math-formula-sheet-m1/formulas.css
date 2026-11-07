@@ -21,27 +21,35 @@
   border-bottom: 1px solid #dde5ee;
   backdrop-filter: blur(6px);
 }
-.fs-toolbar-inner { max-width: 1020px; margin: 0 auto; padding: 12px 18px 10px; }
-.fs-search-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.fs-toolbar-inner { max-width: 1020px; margin: 0 auto; padding: 8px 18px; }
+.fs-search-row { display: flex; gap: 8px; flex-wrap: nowrap; align-items: center; }
 .fs-search {
-  flex: 1 1 260px; padding: 11px 14px; font-size: 15px;
+  flex: 1 1 auto; min-width: 0; padding: 9px 13px; font-size: 14.5px;
   border: 1.5px solid #b9c8da; border-radius: 10px; background: #fff; color: #1b2430;
   font-family: inherit;
 }
 .fs-search:focus { outline: none; border-color: #143a66; box-shadow: 0 0 0 3px rgba(20, 58, 102, 0.15); }
 .fs-add-btn {
   background: #f59e0b; color: #1b2430; border: none; border-radius: 10px;
-  padding: 11px 16px; font-size: 15px; font-weight: 700; cursor: pointer; font-family: inherit;
+  padding: 9px 14px; font-size: 14.5px; font-weight: 700; cursor: pointer; font-family: inherit;
+  white-space: nowrap; flex: 0 0 auto;
 }
 .fs-add-btn:hover { background: #d97706; color: #fff; }
 .fs-print-btn {
   background: #fff; color: #143a66; border: 1.5px solid #143a66; border-radius: 10px;
-  padding: 11px 14px; font-size: 15px; font-weight: 600; cursor: pointer; font-family: inherit;
+  padding: 9px 12px; font-size: 14.5px; font-weight: 600; cursor: pointer; font-family: inherit;
+  white-space: nowrap; flex: 0 0 auto;
 }
-.fs-chips { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 10px; }
+.fs-nav { background: #eef3f9; border-bottom: 1px solid #dde5ee; }
+.fs-nav-inner { max-width: 1020px; margin: 0 auto; padding: 9px 18px 8px; }
+.fs-chips {
+  display: flex; gap: 7px; flex-wrap: nowrap; overflow-x: auto;
+  padding-bottom: 4px; scrollbar-width: thin; -webkit-overflow-scrolling: touch;
+}
 .fs-chip {
   background: #fff; border: 1.5px solid #c3d0df; color: #143a66; border-radius: 999px;
   padding: 6px 13px; font-size: 13.5px; font-weight: 600; cursor: pointer; font-family: inherit;
+  white-space: nowrap; flex: 0 0 auto;
 }
 .fs-chip:hover { border-color: #143a66; }
 .fs-chip.active { background: #143a66; color: #fff; border-color: #143a66; }
@@ -63,6 +71,15 @@
 }
 .fs-card h4 { margin: 0 0 6px; font-size: 14.5px; color: #143a66; font-weight: 700; }
 .fs-new { color: #b45309; font-weight: 600; font-size: 12.5px; }
+.fs-card-actions { display: flex; gap: 7px; margin-top: 9px; }
+.fs-mini-btn {
+  background: #fff; border: 1.5px solid #b9c8da; color: #143a66; border-radius: 8px;
+  padding: 5px 12px; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit;
+}
+.fs-mini-btn:hover { border-color: #143a66; }
+.fs-mini-danger { color: #b3261e; border-color: #e3b3ae; }
+.fs-mini-danger:hover { border-color: #b3261e; background: #fdf0ef; }
+.fs-btn-danger { background: #b3261e !important; }
 .fs-body { font-family: Georgia, "Times New Roman", serif; font-size: 16.5px; line-height: 1.55; overflow-x: auto; }
 .fs-user-body { white-space: pre-wrap; word-break: break-word; }
 .fs-theory { background: #fdf6e9; border: 1px solid #f0dcae; border-left: 5px solid #f59e0b; grid-column: span 2; }
