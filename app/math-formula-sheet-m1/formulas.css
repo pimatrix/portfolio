@@ -1,0 +1,136 @@
+/* Formula Sheet — scoped styles (fs- prefix) */
+.fs-root {
+  background: #f6f8fb;
+  min-height: 100vh;
+  color: #1b2430;
+  font-family: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.fs-header {
+  background: #0e2a4a;
+  border-bottom: 4px solid #f59e0b;
+  color: #fff;
+}
+.fs-header-inner { max-width: 1020px; margin: 0 auto; padding: 22px 18px 18px; }
+.fs-home { color: #f5b942; text-decoration: none; font-size: 13px; font-weight: 600; }
+.fs-header h1 { font-size: 27px; line-height: 1.2; margin: 8px 0 6px; font-weight: 700; }
+.fs-header p { color: #c9d6e6; font-size: 14px; margin: 0; }
+
+.fs-toolbar {
+  position: sticky; top: 0; z-index: 40;
+  background: rgba(246, 248, 251, 0.96);
+  border-bottom: 1px solid #dde5ee;
+  backdrop-filter: blur(6px);
+}
+.fs-toolbar-inner { max-width: 1020px; margin: 0 auto; padding: 12px 18px 10px; }
+.fs-search-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.fs-search {
+  flex: 1 1 260px; padding: 11px 14px; font-size: 15px;
+  border: 1.5px solid #b9c8da; border-radius: 10px; background: #fff; color: #1b2430;
+  font-family: inherit;
+}
+.fs-search:focus { outline: none; border-color: #143a66; box-shadow: 0 0 0 3px rgba(20, 58, 102, 0.15); }
+.fs-add-btn {
+  background: #f59e0b; color: #1b2430; border: none; border-radius: 10px;
+  padding: 11px 16px; font-size: 15px; font-weight: 700; cursor: pointer; font-family: inherit;
+}
+.fs-add-btn:hover { background: #d97706; color: #fff; }
+.fs-print-btn {
+  background: #fff; color: #143a66; border: 1.5px solid #143a66; border-radius: 10px;
+  padding: 11px 14px; font-size: 15px; font-weight: 600; cursor: pointer; font-family: inherit;
+}
+.fs-chips { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 10px; }
+.fs-chip {
+  background: #fff; border: 1.5px solid #c3d0df; color: #143a66; border-radius: 999px;
+  padding: 6px 13px; font-size: 13.5px; font-weight: 600; cursor: pointer; font-family: inherit;
+}
+.fs-chip:hover { border-color: #143a66; }
+.fs-chip.active { background: #143a66; color: #fff; border-color: #143a66; }
+.fs-count { font-size: 13px; color: #5a6b7f; margin: 9px 0 0; }
+
+.fs-main { max-width: 1020px; margin: 0 auto; padding: 10px 18px 40px; }
+.fs-loading { text-align: center; color: #5a6b7f; padding: 40px 0; font-size: 16px; }
+.fs-error { text-align: center; color: #b3261e; padding: 40px 0; font-size: 16px; }
+.fs-cat { margin-top: 22px; }
+.fs-cat-title {
+  background: #143a66; color: #fff; font-size: 18px; font-weight: 700;
+  padding: 8px 14px; border-radius: 8px; margin: 0 0 6px;
+}
+.fs-sec-title { color: #143a66; font-size: 16px; margin: 16px 0 8px; font-weight: 700; }
+.fs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 10px; }
+.fs-card {
+  background: #fff; border: 1px solid #dde5ee; border-radius: 10px;
+  padding: 12px 14px; box-shadow: 0 1px 2px rgba(20, 58, 102, 0.05);
+}
+.fs-card h4 { margin: 0 0 6px; font-size: 14.5px; color: #143a66; font-weight: 700; }
+.fs-new { color: #b45309; font-weight: 600; font-size: 12.5px; }
+.fs-body { font-family: Georgia, "Times New Roman", serif; font-size: 16.5px; line-height: 1.55; overflow-x: auto; }
+.fs-user-body { white-space: pre-wrap; word-break: break-word; }
+.fs-theory { background: #fdf6e9; border: 1px solid #f0dcae; border-left: 5px solid #f59e0b; grid-column: span 2; }
+.fs-theory .th { font-weight: 700; color: #143a66; }
+.fs-theory p, .fs-theory li { font-size: 15px; line-height: 1.5; }
+.fs-table-card { grid-column: span 2; }
+.fs-highlight { outline: 3px solid #f59e0b; outline-offset: 2px; }
+@media (max-width: 700px) {
+  .fs-theory, .fs-table-card { grid-column: span 1; }
+  .fs-header h1 { font-size: 22px; }
+  .fs-body { font-size: 15.5px; }
+}
+
+/* fraction + maths bits (same system as the printed sheet) */
+.fs-body .frac { display: inline-block; vertical-align: middle; text-align: center; margin: 0 2px; }
+.fs-body .frac .t { display: block; padding: 0 5px 1px; border-bottom: 1.4px solid currentColor; line-height: 1.25; }
+.fs-body .frac .b { display: block; padding: 1px 5px 0; line-height: 1.25; }
+.fs-body .mat { display: inline-block; vertical-align: middle; border-left: 2px solid currentColor; border-right: 2px solid currentColor; padding: 1px 7px; text-align: center; line-height: 1.3; margin: 0 3px; }
+.fs-body table.vals { border-collapse: collapse; margin: 6px 0; font-size: 14.5px; }
+.fs-body table.vals th, .fs-body table.vals td { border: 1px solid #9fb3c8; padding: 3px 9px; text-align: center; }
+.fs-body table.vals th { background: #e9eff7; }
+.fs-body .small { font-size: 13.5px; color: #44536a; }
+.fs-body .lbl { font-weight: bold; }
+.fs-body ul { margin: 4px 0; padding-left: 18px; }
+.fs-body p { margin: 3px 0; }
+
+.fs-footer { margin-top: 30px; text-align: center; color: #5a6b7f; font-size: 13px; }
+
+/* Modal */
+.fs-modal-backdrop {
+  position: fixed; inset: 0; background: rgba(10, 25, 45, 0.55);
+  display: flex; align-items: flex-start; justify-content: center;
+  padding: 30px 14px; z-index: 100; overflow-y: auto;
+}
+.fs-modal {
+  background: #fff; border-radius: 14px; max-width: 520px; width: 100%;
+  padding: 22px 22px 18px; box-shadow: 0 18px 50px rgba(0, 0, 0, 0.3);
+}
+.fs-modal h3 { margin: 0 0 14px; color: #143a66; font-size: 19px; }
+.fs-modal label { display: block; font-size: 13.5px; font-weight: 600; color: #44536a; margin-bottom: 12px; }
+.fs-modal input, .fs-modal select, .fs-modal textarea {
+  display: block; width: 100%; margin-top: 5px; padding: 10px 12px;
+  border: 1.5px solid #b9c8da; border-radius: 9px; font-size: 15px;
+  font-family: inherit; color: #1b2430; background: #fff; box-sizing: border-box;
+}
+.fs-modal input:focus, .fs-modal select:focus, .fs-modal textarea:focus {
+  outline: none; border-color: #143a66; box-shadow: 0 0 0 3px rgba(20, 58, 102, 0.15);
+}
+.fs-key-note { font-size: 14.5px; color: #44536a; margin: 0 0 14px; line-height: 1.5; }
+.fs-form-error { color: #b3261e; font-size: 14px; margin: 4px 0 10px; }
+.fs-modal-actions { display: flex; justify-content: space-between; gap: 10px; margin-top: 6px; }
+.fs-btn-primary {
+  background: #143a66; color: #fff; border: none; border-radius: 9px;
+  padding: 11px 18px; font-size: 15px; font-weight: 700; cursor: pointer; font-family: inherit;
+}
+.fs-btn-primary:disabled { opacity: 0.6; cursor: wait; }
+.fs-btn-ghost {
+  background: #fff; color: #143a66; border: 1.5px solid #b9c8da; border-radius: 9px;
+  padding: 11px 16px; font-size: 15px; font-weight: 600; cursor: pointer; font-family: inherit;
+}
+.fs-toast {
+  position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%);
+  background: #143a66; color: #fff; padding: 12px 20px; border-radius: 999px;
+  font-size: 15px; font-weight: 600; z-index: 120; box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+@media print {
+  .fs-toolbar, .fs-add-btn, .fs-print-btn, .fs-home, .fs-modal-backdrop, .fs-toast { display: none !important; }
+  .fs-root { background: #fff; }
+  .fs-card { break-inside: avoid; box-shadow: none; }
+}
