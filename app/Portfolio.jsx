@@ -8,14 +8,14 @@ const PROJECTS = [
   {
     title: "Pragya AI",
     desc: "An AI chat workspace with four Indian Knowledge System personas — Veda, Neeti, Ganita and Sarathi — answering from classical Indian wisdom in Hindi, Hinglish and English. Exhibited at the Medicaps University IKS Exhibition, where real users picked it over generic AI answers.",
-    tags: ["Next.js", "Supabase", "Gemini + Groq"],
+    tags: ["Supabase", "Gemini + Groq"],
     link: "https://pragyaai.yashx.xyz",
     live: true,
   },
   {
     title: "DigiShala — ERP",
     desc: "A comprehensive cloud-based school management system tailored for Tier-2/3 institutions, featuring real-time databases and secure admin dashboards for principals, teachers and parents.",
-    tags: ["HTML/CSS", "JavaScript", "Firebase"],
+    tags: ["HTML/CSS", "Firebase"],
     link: "https://digishala.netlify.app",
     live: true,
   },
@@ -317,7 +317,7 @@ export default function Portfolio() {
             <div className="marquee-track">
               {[0, 1].map((n) => (
                 <span key={n}>
-                  Pragya AI <b>✦</b> Buildathon Winner — Indore <b>✦</b> ESP32 AI Car <b>✦</b> School ERP <b>✦</b> Next.js <b>✦</b> Supabase <b>✦</b> Hackathons <b>✦</b>
+                  Pragya AI <b>✦</b> Buildathon Winner — Indore <b>✦</b> ESP32 AI Car <b>✦</b> School ERP <b>✦</b> Supabase <b>✦</b> Hackathons <b>✦</b>
                 </span>
               ))}
             </div>
@@ -338,8 +338,6 @@ export default function Portfolio() {
                   <span className="chip"><i className="fab fa-html5"></i> HTML5</span>
                   <span className="chip"><i className="fab fa-css3-alt"></i> CSS3</span>
                   <span className="chip"><i className="fab fa-python"></i> Python</span>
-                  <span className="chip"><i className="fab fa-js"></i> JavaScript</span>
-                  <span className="chip"><i className="fab fa-react"></i> React / Next.js</span>
                 </div>
               </div>
               <div className="skill-col">
@@ -466,7 +464,7 @@ export default function Portfolio() {
         <div className="wrap">
           <div className="big">Yash <span>Sharma</span></div>
           <div className="f-row">
-            <span>© {new Date().getFullYear()} Yash Sharma. Built with Next.js &amp; precision.</span>
+            <span>© {new Date().getFullYear()} Yash Sharma. Built with precision.</span>
             <span className="soc">
               <a href="https://github.com/yash-sharmax" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i className="fab fa-github"></i></a>
               <a href="https://www.linkedin.com/in/yashsharmax" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i className="fab fa-linkedin"></i></a>
