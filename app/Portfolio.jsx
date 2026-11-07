@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const PHRASES = ["Full-Stack Developer", "AI-Assisted Developer", "OSINT Researcher", "Hackathon Builder"];
+const PHRASES = ["AI-Assisted Full-Stack Developer", "OSINT Researcher", "Hackathon Builder"];
 
 const PROJECTS = [
   {
@@ -282,8 +282,8 @@ export default function Portfolio() {
               <div className="rise d3">
                 <div className="type-line">&gt; <span className="typed">{typed}</span></div>
                 <p className="lead">
-                  I&apos;m a Full-Stack Developer and <strong>BTech student at Medicaps University</strong>, building scalable ERP
-                  systems, secure applications and AI-powered tools — including <strong>Pragya AI</strong>, exhibited at the
+                  I&apos;m an AI-Assisted Full-Stack Developer and <strong>BTech student at Medicaps University</strong>, building ERP
+                  systems, secure applications and AI-powered tools with AI assistance — including <strong>Pragya AI</strong>, exhibited at the
                   Medicaps University IKS Exhibition.
                 </p>
                 <div className="hero-actions">
@@ -301,7 +301,7 @@ export default function Portfolio() {
                 <div className="spin-badge" aria-hidden="true">
                   <svg viewBox="0 0 100 100">
                     <defs><path id="circ" d="M 50,50 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" /></defs>
-                    <text><textPath href="#circ">Full-Stack Developer • Builder • </textPath></text>
+                    <text><textPath href="#circ">AI-Assisted Developer • Builder • </textPath></text>
                   </svg>
                   <span className="core"><i className="fas fa-arrow-down"></i></span>
                 </div>
