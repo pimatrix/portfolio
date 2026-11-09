@@ -7,7 +7,7 @@ const PHRASES = ["AI-Assisted Full-Stack Developer", "OSINT Researcher", "Hackat
 const PROJECTS = [
   {
     title: "MathMitra",
-    desc: "A maths formula book app for engineering students — 291 formulas with meanings, symbols and worked examples, an AI tutor with photo scan, and personal favourites and folders that sync with your account. Live on the web and as an Android app.",
+    desc: "A maths formula book app for engineering students — a growing library of formulas with meanings, symbols and worked examples, an AI tutor with photo scan, and personal favourites and folders that sync with your account. Live on the web and as an Android app.",
     tags: ["Flutter", "Supabase", "Gemini"],
     link: "https://yashx.xyz/MathMitra-app",
     live: true,
