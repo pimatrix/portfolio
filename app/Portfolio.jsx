@@ -471,6 +471,14 @@ export default function Portfolio() {
               <a href="https://instagram.com/yashandmatrix" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
             </span>
           </div>
+          <div className="f-legal">
+            <span>
+              <a href="/terms">Terms &amp; Conditions</a>
+              <span className="sep">·</span>
+              <a href="/privacy">Privacy Policy</a>
+            </span>
+            <span>This site uses analytics to improve — details in the Privacy Policy.</span>
+          </div>
         </div>
       </footer>
     </>
