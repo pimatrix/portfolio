@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Privacy Policy | Yash Sharma",
+  title: "Privacy Policy | yashx.xyz",
   description:
-    "The common Privacy Policy for yashx.xyz and the projects run by Yash Sharma, including MathMitra. What data is collected, why, and your choices.",
+    "The general Privacy Policy for all websites, applications and services operated by Yash Sharma under yashx.xyz: what data is collected, how it is used, and your rights.",
 };
 
 export default function PrivacyPage() {
@@ -13,117 +13,151 @@ export default function PrivacyPage() {
 
       <div className="summary">
         <p>
-          <strong>The short version:</strong> I never sell your data and I run no advertising
-          trackers. I collect only what is needed to run these services and to understand
-          how students use them, so I can improve them. Everything collected is listed on
-          this page — nothing hidden. You can opt out of analytics, and you can ask for
-          your account and data to be deleted at any time.
+          <strong>Summary:</strong> we collect only the data described in this policy, we use
+          it only to operate, secure and improve our services, and we never sell personal
+          data or use it for advertising. You may opt out of analytics, and you may request
+          access to, correction of, or deletion of your data at any time. The full text
+          below is the binding version.
         </p>
       </div>
 
-      <h2>1. Who is responsible</h2>
+      <h2>1. Who we are</h2>
       <p>
-        This policy covers yashx.xyz and the projects operated by Yash Sharma from it
-        (together, the &quot;Services&quot;), including <strong>MathMitra</strong>. I am the person
-        responsible for the data described here. Contact details are at the end of this page.
+        This Privacy Policy describes how <strong>Yash Sharma</strong> (&quot;we&quot;, &quot;us&quot;,
+        &quot;our&quot;), operating the yashx.xyz domain and its associated websites, applications
+        and services (together, the &quot;Services&quot;), collects, uses, stores and shares
+        personal data. For the purposes of applicable data-protection law, including
+        India&apos;s Digital Personal Data Protection Act, 2023, we are the data fiduciary
+        (data controller) for the data described in this policy.
       </p>
 
-      <h2>2. What data is collected</h2>
-      <p><strong>When you send a message</strong> through a contact form:</p>
+      <h2>2. Scope of this policy</h2>
+      <p>
+        This policy applies to all Services operated by us under yashx.xyz, including
+        websites, web applications and mobile applications, present and future. Where a
+        specific service requires additional data practices, those will be described within
+        that service and will be consistent with this policy.
+      </p>
+
+      <h2>3. Data we collect</h2>
+      <p><strong>(a) Data you provide to us</strong></p>
       <ul>
-        <li>Your name, email address and message — so that I can reply to you.</li>
+        <li><strong>Contact data</strong> — when you contact us through a form or otherwise: your name, email address and the contents of your message.</li>
+        <li><strong>Account data</strong> — where a Service offers accounts: your name, email address, and any profile details you choose to provide (such as your organisation or level of study or work).</li>
+        <li><strong>User content</strong> — content you submit, upload or create through the Services.</li>
+        <li><strong>Credentials</strong> — account passwords are stored only in securely hashed form by our authentication provider; we do not have access to your password in plain text.</li>
       </ul>
-      <p><strong>When you create an account</strong> (in projects that offer accounts, such as MathMitra):</p>
+      <p><strong>(b) Data collected automatically when you use the Services</strong></p>
       <ul>
-        <li>Your name and email address, and — if you choose to provide it — your institution and study level.</li>
-        <li>Your password, stored securely in hashed form by the sign-in provider (Supabase). I never see or store your password in plain text.</li>
-        <li>Content you add, such as formulas you submit.</li>
+        <li><strong>Usage data</strong> — pages, screens, features and content accessed, interactions with the Services, and associated dates and times.</li>
+        <li><strong>Device and technical data</strong> — device type (such as mobile or desktop), operating system, browser type and version, language, and screen characteristics.</li>
+        <li><strong>Network data</strong> — your IP address, which is processed for security, fraud prevention and analytics purposes.</li>
+        <li><strong>Battery status</strong> — where your browser or device makes this information available to websites (for example, Chrome on Android), your device&apos;s battery level may be collected as part of technical data. Some browsers and platforms (such as Safari on iPhone and Firefox) do not provide this information, in which case it is not collected.</li>
       </ul>
-      <p><strong>When you use the Services — usage and analytics data:</strong></p>
+      <p><strong>(c) Data stored on your device</strong></p>
       <ul>
-        <li>Pages and features used, content viewed (for example, which formulas are viewed most), and the date and time of visits.</li>
-        <li>Device and browser information: device type (mobile or desktop), operating system and browser.</li>
-        <li>Your IP address, which is used for security and for analytics.</li>
-        <li>Battery level, only where your browser provides it (Chrome on Android does; Safari on iPhone and Firefox do not, so this is simply absent there).</li>
+        <li><strong>Local storage and cache</strong> — the Services may store preferences and cached content on your device to improve performance and functionality. This data remains on your device and can be cleared through your browser or device settings.</li>
       </ul>
-      <p>
-        <strong>On your device:</strong> the apps store small amounts of data locally on your
-        device (such as your preferences and a cached copy of app content) so they open
-        faster and work smoothly. This stays on your device.
-      </p>
+      <p>We do not knowingly collect data that is not required for the purposes stated in this policy.</p>
 
-      <h2>3. How the data is used</h2>
+      <h2>4. How we use data</h2>
+      <p>We use the data described above only for the following purposes:</p>
       <ul>
-        <li>To operate the Services and the features you use.</li>
-        <li>To understand which content genuinely helps students, and to improve that content.</li>
-        <li>To keep the Services secure and prevent abuse.</li>
-        <li>To reply to messages you send.</li>
+        <li>To provide, operate and maintain the Services and their features.</li>
+        <li>To create and manage accounts and to authenticate users.</li>
+        <li>To understand how the Services are used, which content is useful, and how the Services can be improved (analytics).</li>
+        <li>To protect the security and integrity of the Services and to prevent abuse.</li>
+        <li>To respond to enquiries and provide support.</li>
+        <li>To comply with legal obligations.</li>
       </ul>
       <p>
-        Your data is <strong>never sold</strong>, and it is never shared with third parties
-        for marketing. There are no advertising trackers in the Services.
+        We do <strong>not</strong> sell personal data, and we do not use personal data for
+        third-party advertising or cross-context behavioural tracking.
       </p>
 
-      <h2>4. MathMitra — specifics</h2>
+      <h2>5. Basis for processing and consent</h2>
       <p>
-        In MathMitra, viewing a formula is recorded as an anonymous page view unless you are
-        signed in; if you are signed in, your activity can appear in the admin dashboard
-        together with your name and email, so I can see which students the app is helping
-        and which formulas they need most. If you use the AI photo scan or the AI tutor,
-        the photo or question you submit is sent to Google Gemini for processing, as
-        described below.
+        We process personal data with your consent — given, for example, when you accept
+        this policy during registration or when you submit a form — and for the legitimate
+        purposes of operating and securing the Services described above. You may withdraw
+        consent at any time as described in Section 8; withdrawal will not affect the
+        lawfulness of processing carried out before withdrawal.
       </p>
 
-      <h2>5. Service providers</h2>
-      <p>The Services are built on providers that process data on my behalf:</p>
+      <h2>6. Sharing of data and service providers</h2>
+      <p>
+        We do not share personal data with third parties except with service providers who
+        process data on our behalf to operate the Services, under their own privacy and
+        security obligations. Depending on the Service, these providers include:
+      </p>
       <ul>
-        <li><strong>Vercel</strong> — website and app hosting.</li>
-        <li><strong>Supabase</strong> — database and account sign-in.</li>
-        <li><strong>Google Gemini</strong> — AI features. Photos and questions you submit to an AI feature are sent to Google for processing to produce the answer.</li>
-        <li><strong>Web3Forms</strong> — contact form delivery.</li>
+        <li><strong>Hosting providers</strong> (including Vercel) — to host and deliver the Services.</li>
+        <li><strong>Database and authentication providers</strong> (including Supabase) — to store data and manage sign-in.</li>
+        <li><strong>Artificial-intelligence providers</strong> (including Google) — where you use an AI-powered feature, the content you submit to that feature (such as text or an image) is transmitted to the provider for processing in order to generate a response.</li>
+        <li><strong>Form-delivery providers</strong> (including Web3Forms) — to deliver contact-form messages.</li>
       </ul>
-      <p>Each provider handles data under its own privacy policy.</p>
+      <p>
+        We may also disclose data where required by law, regulation, or a valid legal
+        process, or to protect our rights, users, or the public.
+      </p>
 
-      <h2>6. Your choices and rights</h2>
+      <h2>7. Data retention</h2>
+      <p>
+        Personal data is retained only for as long as necessary for the purposes stated in
+        this policy. Account data is retained while the account remains active and is
+        deleted upon a valid deletion request. Analytics data is retained in aggregated or
+        identifiable form only for so long as it remains useful for improving the Services
+        and is reviewed periodically.
+      </p>
+
+      <h2>8. Your rights and choices</h2>
+      <p>Subject to applicable law, you may:</p>
       <ul>
-        <li><strong>Analytics opt-out:</strong> you can opt out of analytics collection. Where an app provides a settings toggle, use it; otherwise send a request through the contact form and your account/device will be excluded.</li>
-        <li><strong>Access and correction:</strong> you can ask what data I hold about you and ask for corrections.</li>
-        <li><strong>Deletion:</strong> you can request deletion of your account and associated data at any time through the contact form. Requests are completed within 7 days. (A self-service delete option inside the app is also being added.)</li>
-        <li><strong>Consent withdrawal:</strong> withdrawing consent is as easy as giving it — use the opt-out or the contact form.</li>
+        <li><strong>Access</strong> — request a summary of the personal data we hold about you.</li>
+        <li><strong>Correction</strong> — request correction of inaccurate or incomplete data.</li>
+        <li><strong>Deletion</strong> — request deletion of your account and personal data. Requests may be submitted through the contact details in Section 12 and are completed within 30 days at the latest; where a Service provides a self-service deletion option, you may use that instead.</li>
+        <li><strong>Analytics opt-out</strong> — opt out of analytics collection. Where a Service provides a settings control for this purpose, you may use it; in all cases, an opt-out request may also be submitted through the contact details in Section 12 and will be honoured.</li>
+        <li><strong>Withdrawal of consent</strong> — withdraw consent for processing, which is as easy as providing it, using the same channels.</li>
+        <li><strong>Grievance redressal</strong> — raise any concern about your data using the contact details in Section 12; we will acknowledge and address grievances within the timelines prescribed by applicable law.</li>
       </ul>
 
-      <h2>7. How long data is kept</h2>
+      <h2>9. Data security</h2>
       <p>
-        Account data is kept while your account is active and is deleted on request.
-        Analytics data is kept only as long as it is useful for improving the Services and
-        is periodically reviewed.
+        We apply reasonable technical and organisational measures appropriate to the nature
+        of the Services, including encrypted connections, hashed credential storage through
+        our authentication provider, and restricted administrative access. No method of
+        transmission or storage is completely secure; we cannot guarantee absolute
+        security, but we take reasonable care to protect personal data.
       </p>
 
-      <h2>8. Security</h2>
+      <h2>10. Children&apos;s privacy</h2>
       <p>
-        Data is transmitted over encrypted connections, account passwords are hashed by the
-        sign-in provider, and access to admin data is restricted to me. No system can be
-        guaranteed 100% secure, but I take reasonable care with the data entrusted to the
-        Services.
+        The Services are not directed at children. Where a user is under the age of 18, the
+        Services should be used with the verifiable consent of a parent or legal guardian,
+        who may exercise the rights in Section 8 on the child&apos;s behalf. We do not knowingly
+        process a child&apos;s data for tracking or targeted advertising.
       </p>
 
-      <h2>9. Children</h2>
+      <h2>11. International processing</h2>
       <p>
-        The Services are study tools. If you are under 18, please use them with the consent
-        of a parent or guardian, who may contact me about your data at any time.
+        Our service providers may process and store data on servers located in India or in
+        other countries. Where data is processed outside your country, it remains protected
+        as described in this policy and in the relevant provider&apos;s terms.
       </p>
 
-      <h2>10. Changes to this policy</h2>
+      <h2>12. Contact and grievance officer</h2>
       <p>
-        If what is collected ever changes, this page will be updated first — the &quot;last
-        updated&quot; date at the top will change — before or at the same time as the change
-        takes effect. The list on this page always reflects actual practice.
+        For any question, request or grievance relating to this policy or your personal
+        data, please contact: <strong>Yash Sharma</strong>, through the contact form at{" "}
+        <a href="/#contact">yashx.xyz</a> or by call/WhatsApp on 9201980161.
       </p>
 
-      <h2>11. Contact</h2>
+      <h2>13. Changes to this policy</h2>
       <p>
-        For any privacy question, opt-out or deletion request: use the contact form at{" "}
-        <a href="/#contact">yashx.xyz</a> or call/WhatsApp 9201980161.
+        We may update this policy from time to time to reflect changes in the Services or
+        in legal requirements. Any change will be posted on this page with a revised &quot;last
+        updated&quot; date before or at the time it takes effect. The version published on this
+        page is always the current statement of our data practices.
       </p>
 
       <a className="toplink" href="/terms">Read the Terms &amp; Conditions →</a>
