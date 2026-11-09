@@ -44,6 +44,19 @@ const nextConfig = {
           destination:
             "https://maths-formula-flutter.vercel.app/MathMitra/:path*",
         },
+        {
+          // MathMitra product/download page — a standalone page that
+          // lives in the MathMitra project (not in this portfolio);
+          // only the routing passes through here.
+          source: "/MathMitra-app",
+          destination:
+            "https://maths-formula-flutter.vercel.app/MathMitra-app/",
+        },
+        {
+          source: "/MathMitra-app/:path*",
+          destination:
+            "https://maths-formula-flutter.vercel.app/MathMitra-app/:path*",
+        },
       ],
       afterFiles: [],
       fallback: [],
