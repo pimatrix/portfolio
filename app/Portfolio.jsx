@@ -6,6 +6,13 @@ const PHRASES = ["AI-Assisted Full-Stack Developer", "OSINT Researcher", "Hackat
 
 const PROJECTS = [
   {
+    title: "MathMitra",
+    desc: "A maths formula book app for engineering students — 291 formulas with meanings, symbols and worked examples, an AI tutor with photo scan, and personal favourites and folders that sync with your account. Live on the web and as an Android app.",
+    tags: ["Flutter", "Supabase", "Gemini"],
+    link: "https://yashx.xyz/MathMitra-app",
+    live: true,
+  },
+  {
     title: "Pragya AI",
     desc: "An AI chat workspace with four Indian Knowledge System personas — Veda, Neeti, Ganita and Sarathi — answering from classical Indian wisdom in Hindi, Hinglish and English. Exhibited at the Medicaps University IKS Exhibition, where real users picked it over generic AI answers.",
     tags: ["Supabase", "Gemini + Groq"],
@@ -317,7 +324,7 @@ export default function Portfolio() {
             <div className="marquee-track">
               {[0, 1].map((n) => (
                 <span key={n}>
-                  Pragya AI <b>✦</b> Buildathon Winner — Indore <b>✦</b> ESP32 AI Car <b>✦</b> School ERP <b>✦</b> Supabase <b>✦</b> Hackathons <b>✦</b>
+                  MathMitra <b>✦</b> Pragya AI <b>✦</b> Buildathon Winner — Indore <b>✦</b> ESP32 AI Car <b>✦</b> School ERP <b>✦</b> Supabase <b>✦</b> Hackathons <b>✦</b>
                 </span>
               ))}
             </div>
