@@ -53,12 +53,12 @@ const HACKS = [
   {
     tag: "36 Hours · Offline",
     title: "Void Hack(s) 8.0",
-    desc: "A 36-hour offline hackathon at SVVV College, Indore, organised in collaboration with the Indore Police Commissionerate — built on a real-world problem statement under serious time pressure.",
+    desc: "A 36-hour offline hackathon at SVVV College, Indore, organised in collaboration with the Indore Police Commissionerate — built on a real-world problem statement under serious time pressure. Project: Cyberfraud Mule Network Analysis.",
   },
   {
     tag: "Online",
     title: "Cybercrime Hackathon, Bihar",
-    desc: "Participated online — the problem statement here was the same one as Void Hack(s) 8.0.",
+    desc: "Participated online — the problem statement here was the same one as Void Hack(s) 8.0. Project: Cyberfraud Mule Network Analysis.",
   },
   {
     tag: "Internal Round Qualified",
