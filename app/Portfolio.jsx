@@ -13,6 +13,13 @@ const PROJECTS = [
     live: true,
   },
   {
+    title: "School CMS — Bal Vinay Mandir",
+    desc: "A complete website and content management system built for the Govt. School of Excellence Bal Vinay Mandir, Indore. The school manages its notices, gallery, staff and information itself through a secure admin panel — no developer needed for everyday updates.",
+    tags: ["Next.js", "Supabase", "Cloudinary"],
+    link: "https://ebvm.yashx.xyz",
+    live: true,
+  },
+  {
     title: "Pragya AI",
     desc: "An AI chat workspace with four Indian Knowledge System personas — Veda, Neeti, Ganita and Sarathi — answering from classical Indian wisdom in Hindi, Hinglish and English. Exhibited at the Medicaps University IKS Exhibition, where real users picked it over generic AI answers.",
     tags: ["Supabase", "Gemini + Groq"],
