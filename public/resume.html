@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1024">
-    <meta name="description" content="Resume of Yash Sharma — AI-Assisted Full-Stack Developer and BTech student at Medicaps University. Creator of Pragya AI. Viksit Bharat Buildathon 2025 winner (Indore).">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Resume of Yash Sharma — AI-Assisted Full-Stack Developer and BTech student at Medicaps University, Indore. Viksit Bharat Buildathon 2025 winner (Indore).">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <title>Yash Sharma - Resume</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -93,6 +93,30 @@
         @media screen and (max-width: 900px) {
             body { align-items: flex-start; overflow: auto; }
             .page { min-width: 210mm; }
+        }
+
+        /* ---------- PHONE (screen only): one readable fluid column ----------
+           Print/PDF output is untouched: these rules apply to screens up to
+           640px wide, where the fixed A4 sheet would otherwise shrink into
+           unreadable, overlapping text. */
+        @media screen and (max-width: 640px) {
+            body { align-items: stretch; padding: 14px 10px 86px; gap: 18px; }
+            .page { width: 100%; min-width: 0; height: auto; overflow: visible; padding: 22px 18px; box-shadow: 0 6px 24px rgba(0,0,0,0.25); }
+            .header { gap: 14px; }
+            .header h1 { font-size: 1.65rem; }
+            .header h2 { font-size: 0.78rem; }
+            .header .ai-note { font-size: 0.74rem; }
+            .header img { width: 62px; height: 74px; }
+            .contact-row { font-size: 0.72rem; gap: 4px 7px; }
+            .sec-title { margin: 18px 0 10px; }
+            .summary { text-align: left; font-size: 0.88rem; }
+            .edu-grid { grid-template-columns: 1fr; gap: 8px; }
+            .kv { grid-template-columns: 112px 1fr; gap: 6px 10px; font-size: 0.84rem; }
+            .proj-top { flex-wrap: wrap; }
+            .proj-link { overflow-wrap: anywhere; }
+            .proj p { font-size: 0.83rem; }
+            .hack { font-size: 0.84rem; }
+            .no-print { top: auto; bottom: 16px; right: 14px; padding: 10px 16px; font-size: 0.85rem; }
         }
     </style>
 </head>
