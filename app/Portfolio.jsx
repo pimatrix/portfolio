@@ -65,7 +65,7 @@ const HACKS = [
   {
     tag: "Online",
     title: "Cybercrime Hackathon, Bihar",
-    desc: "Participated online — the problem statement here was the same one as Void Hack(s) 8.0. Project: Cyberfraud Mule Network Analysis.",
+    desc: "Participated online in this cybercrime and digital-fraud focused hackathon. Project: Cyberfraud Mule Network Analysis.",
   },
   {
     tag: "Internal Round Qualified",
@@ -297,8 +297,8 @@ export default function Portfolio() {
                 <div className="type-line">&gt; <span className="typed">{typed}</span></div>
                 <p className="lead">
                   I&apos;m an AI-Assisted Full-Stack Developer and <strong>BTech student at Medicaps University</strong>, building ERP
-                  systems, secure applications and AI-powered tools with AI assistance — including <strong>Pragya AI</strong>, exhibited at the
-                  Medicaps University IKS Exhibition.
+                  systems, secure applications and AI-powered tools with AI assistance — focused on clean design, real users and
+                  products that actually ship.
                 </p>
                 <div className="hero-actions">
                   <a href="/resume.html" target="_blank" rel="noopener" className="btn btn-solid"><i className="fas fa-file-alt"></i> View Resume</a>
