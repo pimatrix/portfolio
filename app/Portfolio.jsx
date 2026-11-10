@@ -296,9 +296,10 @@ export default function Portfolio() {
               <div className="rise d3">
                 <div className="type-line">&gt; <span className="typed">{typed}</span></div>
                 <p className="lead">
-                  I&apos;m an AI-Assisted Full-Stack Developer and <strong>BTech student at Medicaps University</strong>, building ERP
-                  systems, secure applications and AI-powered tools with AI assistance — focused on clean design, real users and
-                  products that actually ship.
+                  I&apos;m an AI-Assisted Full-Stack Developer and <strong>BTech student at Medicaps University</strong>, Indore. I build and
+                  deploy real-world web applications and AI-powered tools with AI assistance — school systems, learning apps and secure
+                  utilities — using HTML, CSS, Python and platforms like Supabase and Vercel, while strengthening my programming
+                  foundation with C and C++. I enjoy turning ideas into working products, and hackathons are where I prove it under pressure.
                 </p>
                 <div className="hero-actions">
                   <a href="/resume.html" target="_blank" rel="noopener" className="btn btn-solid"><i className="fas fa-file-alt"></i> View Resume</a>
