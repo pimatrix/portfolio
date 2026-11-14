@@ -57,6 +57,17 @@ const nextConfig = {
           destination:
             "https://maths-formula-flutter.vercel.app/MathMitra-app/:path*",
         },
+        {
+          // Life Game Habit Tracker — a standalone Next.js app that
+          // lives in the lifegame project (not in this portfolio);
+          // only the routing passes through here.
+          source: "/lifegame",
+          destination: "https://lifegame-psi.vercel.app/",
+        },
+        {
+          source: "/lifegame/:path*",
+          destination: "https://lifegame-psi.vercel.app/:path*",
+        },
       ],
       afterFiles: [],
       fallback: [],
