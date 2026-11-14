@@ -60,13 +60,15 @@ const nextConfig = {
         {
           // Life Game Habit Tracker — a standalone Next.js app that
           // lives in the lifegame project (not in this portfolio);
-          // only the routing passes through here.
+          // only the routing passes through here. The app uses
+          // basePath /lifegame, so the rewrite must keep the /lifegame
+          // prefix on the destination too.
           source: "/lifegame",
-          destination: "https://lifegame-psi.vercel.app/",
+          destination: "https://lifegame-psi.vercel.app/lifegame",
         },
         {
           source: "/lifegame/:path*",
-          destination: "https://lifegame-psi.vercel.app/:path*",
+          destination: "https://lifegame-psi.vercel.app/lifegame/:path*",
         },
       ],
       afterFiles: [],
